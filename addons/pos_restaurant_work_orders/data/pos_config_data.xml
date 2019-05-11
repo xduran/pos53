@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="point_of_sale.pos_config_main" model="pos.config">
+        <field name="printer_ids" eval="[(6, 0, [ref('pos_restaurant_work_orders.kitchen'),ref('pos_restaurant_work_orders.bar')])]" />
+    </record>
+</odoo>

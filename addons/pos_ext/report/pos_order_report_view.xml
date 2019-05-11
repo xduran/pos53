@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_report_pos_order_pivot_inherit" model="ir.ui.view">
+            <field name="name">report.pos.order.pivot</field>
+            <field name="model">report.pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_pivot"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_categ_id']" position="replace">
+                    <field name="pos_categ_id" type="row"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_report_pos_order_graph_inherit" model="ir.ui.view">
+            <field name="name">report.pos.order.graph</field>
+            <field name="model">report.pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_graph"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_categ_id']" poview_report_pos_order_searchsition="replace">
+                    <field name="pos_categ_id" type="row"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_report_pos_order_search_inherit" model="ir.ui.view">
+            <field name="name">report.pos.order.search</field>
+            <field name="model">report.pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="pos_categ_id"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Public Category" domain="[]" context="{'group_by':'pos_categ_id'}"/>
+                    <filter string="Weekday" domain="[]" context="{'group_by':'week_day'}"/>
+                    <filter string="Month Day" domain="[]" context="{'group_by':'month_day'}"/>
+                    <filter string="Day Hour" domain="[]" context="{'group_by':'day_hour'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

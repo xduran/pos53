@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_session_inherit_form">
+            <field name="name">pos.session.form.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(account.action_view_account_bnk_stmt_cashbox)d']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|', ('cash_register_balance_start', '!=', 0), ('cash_control', '=', False), ('state', '!=', 'opening_control')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='%(point_of_sale.action_pos_box_out)d']" position="after">
+                    <button type="action" class="oe_stat_button" id="cash_operations_button" icon="fa-arrows-v"
+                        name="%(pos_cash_control.action_cash_box_operation)d"
+                        context="{'search_default_pos_session_id': active_id,'default_pos_session_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <!--<span class="o_stat_value"><field name="work_order_count"/></span>-->
+                            <span class="o_stat_text">Cash Operations</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

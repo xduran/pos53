@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_session_receipt">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h2 t-esc="company.name"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div><strong>Cashier: </strong><span t-field="o.user_id"/></div>
+                            <div><strong>Start Date: </strong><span t-field="o.start_at" t-field-options='{"format": "dd/MM/yyyy HH:mm"}'/></div>
+                            <div><strong>Stop Date: </strong><span t-field="o.stop_at" t-field-options='{"format": "dd/MM/yyyy HH:mm"}'/></div>
+                        </div>
+                        <div t-foreach="areas()" t-as="c" class="row">
+                            <div class="col-xs-12 text-center"><h3 t-esc="c['name']"/></div>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th width="50%">Product</th>
+                                        <th class="text-right">Qty</th>
+                                        <th class="text-right">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="c['products']" t-as="p">
+                                        <td>
+                                            <span t-esc="p['name']"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-esc="p['qty']"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-esc="formatLang(p['subtotal'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="border-black">
+                                        <td></td>
+                                        <td><strong>Subtotal</strong></td>
+                                        <td class="text-right"><strong><span t-esc="formatLang(c['total'], currency_obj=company.currency_id)"/></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <table class="table table-condensed">
+                                <div class="col-xs-12 text-center"><h3>Summary</h3></div>
+                                <tbody>
+                                    <tr class="border-black">
+
+                                        <td class="text-right">
+                                            <strong>Subtotal:</strong>
+                                        </td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['subtotal'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="o.config_id.iface_global_discount">
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>Discount:</strong>
+                                        </td>
+                                        <td class="text-right">-</td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['discount'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>House tab:</strong>
+                                        </td>
+                                        <td class="text-right">-</td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['discount100'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    </t>
+                                    <tr class="border-black">
+                                        <td class="text-right">
+                                            <strong>Net Sale:</strong>
+                                        </td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['net_sale'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="o.config_id.iface_service_fee">
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>Service:</strong>
+                                        </td>
+                                        <td class="text-right">+</td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['service'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    </t>
+                                    <t t-if="o.config_id.iface_allow_tip">
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>Tip:</strong>
+                                        </td>
+                                        <td class="text-right">+</td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['tip'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                    </t>
+                                    <tr class="border-black">
+                                        <td class="text-right">
+                                            <strong>Total:</strong>
+                                        </td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right">
+                                            <strong t-esc="formatLang(summary()['total'], currency_obj=res_company.currency_id)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Company data for Restaurant. -->
+<odoo noupdate="1">
+	<record id="base.main_company" model="res.company">
+		<field name="website"/>
+		<field name="lang">es_ES</field>
+		<field name="name">Hav21</field>
+		<field name="city" ref="base_cu.res_country_state_county_23"/>
+		<field name="country_id" ref="base.cu"/>
+		<field name="street2">% N y O</field>
+		<field name="company_type">company</field>
+		<field name="currency_id" ref="base_cu.CUC"/>
+		<field name="phone">78322118</field>
+		<field name="street">Calle 21 #19</field>
+		<field name="state_id" ref="base_cu.hab"/>
+		<field name="logo" type="base64" file="odec_installer/static/img/logo.jpg"/>
+	</record>
+</odoo>

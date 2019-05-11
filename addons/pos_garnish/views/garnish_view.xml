@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="product_garnish_tree_view">
+            <field name="name">product.garnish.tree</field>
+            <field name="model">product.garnish</field>
+            <field name="arch" type="xml">
+                <tree string="Product garnish" editable="bottom">
+                    <field name="product_id"/>
+                    <field name="garnish_id"/>
+                    <field name="price_extra"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form.inherit2</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="point_of_sale.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <!-- TODO: pass this statement to the pos_restaurant_ext module-->
+                <xpath expr="//field[@name='to_weight']" position="replace"></xpath>
+
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page string="Garnish" name="garnish"
+                          attrs="{'invisible': ['|', ('available_in_pos', '=', False), ('sale_ok', '=', False)]}">
+                        <group name="garnish" >
+                            <field name="to_garnish" attrs="{'invisible': [('is_garnish', '=', True)]}"/>
+                            <field name="order_separated" attrs="{'invisible': [('is_garnish', '=', True)]}"/>
+                            <field name="stand_alone" attrs="{'invisible': [('is_garnish', '=', False)]}"/>
+                            <field name="allowed_garnish"
+                                   attrs="{'invisible': ['|',('to_garnish', '=', False),('is_garnish', '=', True)]}"/>
+                            <field name="is_garnish" invisible="1"/>
+                        </group>
+                        <separator string="Valid Garnish"
+                                   attrs="{'invisible': ['|',('to_garnish', '=', False),('is_garnish', '=', True)]}"/>
+                        <field name="valid_garnish_ids"
+                               attrs="{'invisible': ['|',('to_garnish', '=', False),('is_garnish', '=', True)]}">
+                            <tree string="Product garnish" editable="bottom">
+                                <field name="garnish_id"/>
+                                <field name="price_extra"/>
+                            </tree>
+                        </field>
+                        <separator string="Garnish of" attrs="{'invisible': [('is_garnish', '=', False)]}"/>
+                        <field name="garnish_of_ids" attrs="{'invisible': [('is_garnish', '=', False)]}">
+                            <tree string="Product garnish" editable="bottom">
+                                <field name="product_id"/>
+                                <field name="price_extra"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit2</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cash_control']" position="before">
+                    <field name="iface_garnish" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_order_form">
+            <field name="name">pos.order.form.view.inherit2</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="after">
+                    <field name="garnish_text"/>
+                </xpath>
+
+                <xpath expr="//field[@name='lines']/form/group" position="after">
+                    <field name="product_garnish_ids">
+                        <tree string="Garnish" editable="bottom">
+                            <field name="garnish_id"/>
+                            <field name="price_extra"/>
+                        </tree>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_pos_category_form_view_inherit" model="ir.ui.view">
+            <field name="name">pos.category.form.inherit</field>
+            <field name="model">pos.category</field>
+            <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="is_garnish"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

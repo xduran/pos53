@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="Garnish">
+        <span class='product' t-att-data-garnish-id="garnish.id">
+            <div class="product-img">
+                <img t-att-src='image_url' />
+                <span class="price-tag">
+                    <t t-esc="widget.format_currency(garnish.price_extra,'Product Price')"/>
+                </span>
+            </div>
+            <div class="product-name">
+                <t t-esc="garnish.name"/>
+            </div>
+        </span>
+    </t>
+
+    <t t-name="EmptyGarnish">
+        <span class='product'>
+            <div class="button">
+                <i class='fa fa-cutlery'></i>
+            </div>
+        </span>
+    </t>
+
+    <t t-name="GarnishListWidget">
+        <div class='product-list-container'>
+            <div class="product-list-scroller touch-scrollable">
+                <div class="available-garnish-list">
+                </div>
+            </div>
+            <span class="placeholder-ScrollbarWidget" />
+        </div>
+    </t>
+
+    <t t-name="GarnishSelectedWidget">
+        <div class='product-list-container'>
+            <div class="product-list-scroller touch-scrollable">
+                <div class="selected-garnish-list">
+                </div>
+            </div>
+            <span class="placeholder-ScrollbarWidget" />
+
+        </div>
+    </t>
+
+    <t t-name="GarnishScreenWidget">
+        <div class="screen">
+            <div class="screen-content">
+                <div class="top-content">
+                    <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        Cancel
+                    </span>
+                    <h1>Garnish</h1>
+                    <span class='button next highlight'>
+                        Accept
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                </div>
+                <div class="full-content">
+                    <div class="screen">
+                        <div class="selected-garnish-content">
+                            <div class="top-content">
+                                <h2>The product will be serve with:</h2>
+                                 <span class='button clear'>
+                                     <i class='fa fa-trash'></i>
+                                 </span>
+                            </div>
+                            <div class="full-content">
+                                <div class="placeholder-GarnishSelectedWidget" />
+                            </div>
+                        </div>
+                        <div class="available-garnish-content">
+                            <div class="top-content">
+                                <h2>Garnish available for this product:</h2>
+                            </div>
+                            <div class="full-content">
+                                <div class="placeholder-GarnishListWidget" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </t>
+
+
+    <t t-extend="Orderline">
+        <t t-jquery=".info-list" t-operation="prepend">
+            <t t-if="line.get_product().to_garnish">
+                <t t-if="line.get_garnish().length > 0">
+                    <li class="info">
+                        (<t t-esc="line.get_garnish_text()" />)
+                    </li>
+                </t>
+                <t t-if="line.get_empty_garnish() > 0">
+                    <li class="info warning">
+                        <i class="fa fa-cutlery"></i>  <t t-esc="line.get_empty_garnish()" /> garnish to be defined
+                    </li>
+                </t>
+            </t>
+        </t>
+    </t>
+
+    <t t-name="GarnishButton">
+        <div class='control-button'>
+            <i class="fa fa-cutlery"></i>
+            Garnish
+        </div>
+    </t>
+    <t t-extend="SubmitOrderButton">
+        <t t-jquery="i" t-operation="replace">
+            <i class="fa fa-play"></i>
+        </t>
+    </t>
+
+</templates>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_country_state_form" model="ir.ui.view">
+            <field name="name">res.country.state.inherit.form</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='country_id']" position="replace">
+                        <field name="country_id" options='{"no_open": True}'/>
+                    </xpath>
+                    <xpath expr="//group" position="after">
+                        <label for="county_ids"/>
+                        <field name="county_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="code"/>
+                            </tree>
+                        </field>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+
+        <record id="view_country_state_filter" model="ir.ui.view">
+            <field name="name">Province</field>
+            <field name="model">res.country.state</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Province">
+                    <separator orientation="vertical"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country_id" widget="selection"/>
+                    <newline/>
+                    <group expand="1" string="Group by...">
+                        <filter string="Country" icon="terp-personal+" domain="[]"
+                                context="{'group_by':'country_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="menu_localities_config" name="Localization" parent="base.menu_administration"/>
+        <menuitem action="base.action_country" id="menu_country_config" parent="menu_localities_config" sequence="1"/>
+        <menuitem action="base.action_country_state" id="menu_country_state_config" parent="menu_localities_config"
+                  sequence="2"/>
+    </data>
+</openerp>

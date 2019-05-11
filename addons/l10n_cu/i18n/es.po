@@ -1,0 +1,22 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160107\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-06 04:08+0000\n"
+"PO-Revision-Date: 2016-05-06 00:09-0500\n"
+"Last-Translator: Javier Ruiz <javier.ruiz.duran@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: l10n_cu
+#: model:account.account.type,name:l10n_cu.data_account_type_tax_expenses
+msgid "Taxes and Contributions"
+msgstr "Impuestos y contribuciones"

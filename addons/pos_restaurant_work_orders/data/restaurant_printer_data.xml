@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="kitchen" model="restaurant.printer">
+        <field name="name">Kitchen</field>
+        <field name="proxy_ip">localhost</field>
+        <field name="product_categories_ids" eval="[(6, 0, [ref('pos_restaurant_ext.food')])]" />
+    </record>
+    <record id="bar" model="restaurant.printer">
+        <field name="name">Bar</field>
+        <field name="proxy_ip">localhost</field>
+        <field name="product_categories_ids" eval="[(6, 0, [ref('pos_restaurant_ext.beverage')])]" />
+    </record>
+</odoo>

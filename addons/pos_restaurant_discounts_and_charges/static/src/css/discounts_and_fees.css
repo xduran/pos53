@@ -1,0 +1,19 @@
+.pos .order .summary .line .service-amount {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.pos .order .summary .line .discount-amount {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.pos .numpad-disc {
+    font-size: 14px;
+}
+
+.pos .order .summary .total1 {
+    font-size: 22px;
+}

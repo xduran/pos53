@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_product_processing_tree">
+            <field name="name">Products Processing</field>
+            <field name="model">product.processing</field>
+            <field name="arch" type="xml">
+                <tree string="Products Processing" decoration-warning="state=='draft'">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_product_processing_form">
+            <field name="name">Products Processing</field>
+            <field name="model">product.processing</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="process_products" states="draft" string="Process" type="object" class="oe_highlight" groups="stock.group_stock_user"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Meat preparation"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                                <field name="location_src_id"/>
+                                <field name="location_dest_id"/>
+                            </group>
+                        </group>
+                        <field name="note"/>
+                        <notebook>
+                            <page string="Raw materials">
+                                <field name="lines_in" context="{'default_type': 'in'}">
+                                    <tree editable="bottom">
+                                        <field name="type" invisible="1"/>
+                                        <field name="product_id" on_change="onchange_line(product_id, uom_id)"/>
+                                        <field name="qty"/>
+                                        <field name="uom_id" groups="product.group_uom" on_change="onchange_line(product_id, uom_id)"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Finish products">
+                                <field name="lines_out" context="{'default_type': 'out'}">
+                                    <tree editable="bottom">
+                                        <field name="type" invisible="1"/>
+                                        <field name="product_id" on_change="onchange_line(product_id, uom_id)"/>
+                                        <field name="qty"/>
+                                        <field name="uom_id" groups="product.group_uom" on_change="onchange_line(product_id, uom_id)"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other information"></page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_product_processing">
+            <field name="name">Products Processing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.processing</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <menuitem parent="stock.menu_stock_inventory_control" id="menu_product_processing"
+                  action="action_product_processing" sequence="3" groups="stock.group_stock_user"/>
+
+    </data>
+</openerp>

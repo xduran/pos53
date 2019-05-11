@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_order_inherit10_form">
+            <field name="name">account.bnk_stmt_cashbox.form.inherit10</field>
+            <field name="model">account.bank.statement.cashbox</field>
+            <field name="inherit_id" ref="account.view_account_bnk_stmt_cashbox"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cashbox_lines_ids']/tree/field[@name='coin_value']" position="replace">
+                    <field name="coin_value" options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Product categories and POS categories data for Restaurant. -->
+<odoo noupdate="1">
+	<record id="restaurant_stock_product_category_0" model="product.category">
+		<field name="parent_id" ref="product.product_category_all"/>
+		<field name="name">Bebidas</field>
+	</record>
+	<record id="restaurant_stock_product_category_1" model="product.category">
+		<field name="parent_id" ref="product.product_category_all"/>
+		<field name="name">Insumos</field>
+	</record>
+	<record id="restaurant_stock_product_category_2" model="product.category">
+		<field name="parent_id" ref="product.product_category_all"/>
+		<field name="name">Alimentos</field>
+	</record>
+	<record id="restaurant_stock_product_category_3" model="product.category">
+		<field name="parent_id" ref="product.product_category_all"/>
+		<field name="name">Otras</field>
+	</record>
+	<record id="restaurant_stock_product_category_4" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Aguas Nacionales</field>
+	</record>
+	<record id="restaurant_stock_product_category_5" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Aguas Importadas</field>
+	</record>
+	<record id="restaurant_stock_product_category_6" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Lacteos</field>
+	</record>
+	<record id="restaurant_stock_product_category_7" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Maltas</field>
+	</record>
+	<record id="restaurant_stock_product_category_8" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Miscelaneas</field>
+	</record>
+	<record id="restaurant_stock_product_category_9" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Misceláneas</field>
+	</record>
+	<record id="restaurant_stock_product_category_10" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Frutas</field>
+	</record>
+	<record id="restaurant_stock_product_category_11" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Lácteos</field>
+	</record>
+	<record id="restaurant_stock_product_category_12" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_3"/>
+		<field name="name">Miscelanea</field>
+	</record>
+	<record id="restaurant_stock_product_category_13" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Miscelánea</field>
+	</record>
+	<record id="restaurant_stock_product_category_14" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Jugos</field>
+	</record>
+	<record id="restaurant_stock_product_category_15" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Refrescos Nacionales</field>
+	</record>
+	<record id="restaurant_stock_product_category_16" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Refrescos Importados</field>
+	</record>
+	<record id="restaurant_stock_product_category_17" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Energetizantes</field>
+	</record>
+	<record id="restaurant_stock_product_category_18" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Cervezas Nacionales</field>
+	</record>
+	<record id="restaurant_stock_product_category_19" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Cervezas Importadas</field>
+	</record>
+	<record id="restaurant_stock_product_category_20" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Rones Cubanos</field>
+	</record>
+	<record id="restaurant_stock_product_category_21" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Rones Importados</field>
+	</record>
+	<record id="restaurant_stock_product_category_22" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Cognac</field>
+	</record>
+	<record id="restaurant_stock_product_category_23" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Brandy</field>
+	</record>
+	<record id="restaurant_stock_product_category_24" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Licores</field>
+	</record>
+	<record id="restaurant_stock_product_category_25" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Vermouth</field>
+	</record>
+	<record id="restaurant_stock_product_category_26" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Ginebras</field>
+	</record>
+	<record id="restaurant_stock_product_category_27" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Tequilas</field>
+	</record>
+	<record id="restaurant_stock_product_category_28" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Vodka</field>
+	</record>
+	<record id="restaurant_stock_product_category_29" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Whisky</field>
+	</record>
+	<record id="restaurant_stock_product_category_30" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Vinos</field>
+	</record>
+	<record id="restaurant_stock_product_category_31" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Salsas</field>
+	</record>
+	<record id="restaurant_stock_product_category_32" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_0"/>
+		<field name="name">Infusiones</field>
+	</record>
+	<record id="restaurant_stock_product_category_33" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Especias</field>
+	</record>
+	<record id="restaurant_stock_product_category_34" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_3"/>
+		<field name="name">Cigarros</field>
+	</record>
+	<record id="restaurant_stock_product_category_35" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Vegetales</field>
+	</record>
+	<record id="restaurant_stock_product_category_36" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Huevos</field>
+	</record>
+	<record id="restaurant_stock_product_category_37" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Grasas</field>
+	</record>
+	<record id="restaurant_stock_product_category_38" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Panes</field>
+	</record>
+	<record id="restaurant_stock_product_category_39" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Jamones y Embutidos</field>
+	</record>
+	<record id="restaurant_stock_product_category_40" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Quesos</field>
+	</record>
+	<record id="restaurant_stock_product_category_41" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Aceites</field>
+	</record>
+	<record id="restaurant_stock_product_category_42" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Vinagres</field>
+	</record>
+	<record id="restaurant_stock_product_category_43" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Desayunos</field>
+	</record>
+	<record id="restaurant_stock_product_category_44" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Carne de Cerdo</field>
+	</record>
+	<record id="restaurant_stock_product_category_45" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Carne de Ave</field>
+	</record>
+	<record id="restaurant_stock_product_category_46" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Viandas</field>
+	</record>
+	<record id="restaurant_stock_product_category_47" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Pescados</field>
+	</record>
+	<record id="restaurant_stock_product_category_48" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Carne de Res</field>
+	</record>
+	<record id="restaurant_stock_product_category_49" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Mariscos</field>
+	</record>
+	<record id="restaurant_stock_product_category_50" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Elaboraciones</field>
+	</record>
+	<record id="restaurant_stock_product_category_51" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Harinas</field>
+	</record>
+	<record id="restaurant_stock_product_category_52" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Granos</field>
+	</record>
+	<record id="restaurant_stock_product_category_53" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Pastas</field>
+	</record>
+	<record id="restaurant_stock_product_category_54" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Carne de Cordero</field>
+	</record>
+	<record id="restaurant_stock_product_category_55" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Envases</field>
+	</record>
+	<record id="restaurant_stock_product_category_56" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Cristales</field>
+	</record>
+	<record id="restaurant_stock_product_category_57" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Cubiertos</field>
+	</record>
+	<record id="restaurant_stock_product_category_58" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Telas</field>
+	</record>
+	<record id="restaurant_stock_product_category_59" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Insumo</field>
+	</record>
+	<record id="restaurant_stock_product_category_60" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_1"/>
+		<field name="name">Materiales de Higiene</field>
+	</record>
+	<record id="restaurant_stock_product_category_61" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Helados</field>
+	</record>
+	<record id="restaurant_stock_product_category_62" model="product.category">
+		<field name="parent_id" ref="restaurant_stock_product_category_2"/>
+		<field name="name">Postres</field>
+	</record>
+	<record id="cocktail" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Cocteles</field>
+	</record>
+	<record id="wine" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Vinos</field>
+	</record>
+	<record id="beer" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Cervezas</field>
+	</record>
+	<record id="water" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Agua</field>
+	</record>
+	<record id="soft-drink" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Refrescos</field>
+	</record>
+	<record id="juice" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Jugos</field>
+	</record>
+	<record id="infusion" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Infusión</field>
+	</record>
+	<record id="appetizer" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Aperitivos</field>
+	</record>
+	<record id="main-dish" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Plato Principal</field>
+	</record>
+	<record id="garnish" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Guarnición</field>
+	</record>
+	<record id="dessert" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Postre</field>
+	</record>
+	<record id="restaurant_pos_product_category_0" model="pos.category">
+		<field name="parent_id" ref="water"/>
+		<field name="name">Aguas Nacionales</field>
+	</record>
+	<record id="restaurant_pos_product_category_1" model="pos.category">
+		<field name="parent_id" ref="water"/>
+		<field name="name">Aguas Importadas</field>
+	</record>
+	<record id="restaurant_pos_product_category_2" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Batidos y Lacteos</field>
+	</record>
+	<record id="restaurant_pos_product_category_3" model="pos.category">
+		<field name="parent_id" ref="juice"/>
+		<field name="name">Jugos Naturales</field>
+	</record>
+	<record id="restaurant_pos_product_category_4" model="pos.category">
+		<field name="parent_id" ref="juice"/>
+		<field name="name">Jugos Nacionales</field>
+	</record>
+	<record id="restaurant_pos_product_category_5" model="pos.category">
+		<field name="parent_id" ref="juice"/>
+		<field name="name">Jugos Importados</field>
+	</record>
+	<record id="restaurant_pos_product_category_6" model="pos.category">
+		<field name="parent_id" ref="soft-drink"/>
+		<field name="name">Refrescos Nacionales</field>
+	</record>
+	<record id="restaurant_pos_product_category_7" model="pos.category">
+		<field name="parent_id" ref="soft-drink"/>
+		<field name="name">Refrescos Importados</field>
+	</record>
+	<record id="restaurant_pos_product_category_8" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Maltas</field>
+	</record>
+	<record id="restaurant_pos_product_category_9" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Energetizantes</field>
+	</record>
+	<record id="restaurant_pos_product_category_10" model="pos.category">
+		<field name="parent_id" ref="beer"/>
+		<field name="name">Cervezas Nacionales</field>
+	</record>
+	<record id="restaurant_pos_product_category_11" model="pos.category">
+		<field name="parent_id" ref="beer"/>
+		<field name="name">Cervezas Importadas</field>
+	</record>
+	<record id="restaurant_pos_product_category_12" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Rones</field>
+	</record>
+	<record id="restaurant_pos_product_category_13" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Cognac</field>
+	</record>
+	<record id="restaurant_pos_product_category_14" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Brandy</field>
+	</record>
+	<record id="restaurant_pos_product_category_15" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Cava</field>
+	</record>
+	<record id="restaurant_pos_product_category_16" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Licores</field>
+	</record>
+	<record id="restaurant_pos_product_category_17" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Vermouth</field>
+	</record>
+	<record id="restaurant_pos_product_category_18" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Ginebras</field>
+	</record>
+	<record id="restaurant_pos_product_category_19" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Tequila</field>
+	</record>
+	<record id="restaurant_pos_product_category_20" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Vodka</field>
+	</record>
+	<record id="restaurant_pos_product_category_21" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Whisky</field>
+	</record>
+	<record id="restaurant_pos_product_category_22" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.other"/>
+		<field name="name">Cigarros y Tabacos</field>
+	</record>
+	<record id="restaurant_pos_product_category_23" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.beverage"/>
+		<field name="name">Aguardientes</field>
+	</record>
+	<record id="restaurant_pos_product_category_24" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Desayunos C</field>
+	</record>
+	<record id="restaurant_pos_product_category_25" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Desayunos</field>
+	</record>
+	<record id="restaurant_pos_product_category_26" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Entrepanes</field>
+	</record>
+	<record id="restaurant_pos_product_category_27" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Entrantes</field>
+	</record>
+	<record id="restaurant_pos_product_category_28" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Fuertes</field>
+	</record>
+	<record id="restaurant_pos_product_category_29" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Ensaladas</field>
+	</record>
+	<record id="restaurant_pos_product_category_30" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Envases</field>
+	</record>
+	<record id="restaurant_pos_product_category_31" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Tapas</field>
+	</record>
+	<record id="restaurant_pos_product_category_32" model="pos.category">
+		<field name="parent_id" ref="pos_restaurant_ext.food"/>
+		<field name="name">Agregos</field>
+	</record>
+</odoo>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ServiceButton">
+        <div class='control-button'>
+            <i class="fa fa-group"></i>
+            Service
+        </div>
+    </t>
+
+    <t t-extend="OrderWidget">
+        <t t-jquery="div.line" t-operation="replace">
+            <div class="line">
+                <div class='entry total hidden' >
+                    <span class="label">Total: </span> <span class="value">0.00 €</span>
+                    <div class='subentry'>Taxes: <span class="value">0.00€</span></div>
+                </div>
+                <table>
+                    <colgroup>
+                        <col width='30%' />
+                        <col width='70%' />
+                    </colgroup>
+                    <t t-if="widget.pos.config.iface_display_taxes ||
+                            widget.pos.config.iface_global_discount ||
+                            widget.pos.config.iface_service_fee" >
+                    <tr class='subtotal'>
+                        <td class="pos-right-align">
+                            Subtotal:
+                        </td>
+                        <td class="pos-right-align">
+                            <span class="value">0.00 $</span>
+                        </td>
+                    </tr>
+                    </t>
+                    <t t-if="widget.pos.config.iface_global_discount" >
+                    <tr class='discount'>
+                        <td class="pos-right-align">
+                            Discount(<span class="percent">0</span>%):
+                        </td>
+                        <td class="pos-right-align">
+                            - <span class="value">0.00 $</span>
+                        </td>
+                    </tr>
+                    </t>
+                    <t t-if="widget.pos.config.iface_service_fee" >
+                    <tr class='service'>
+                        <td class="pos-right-align">
+                            Service(<span class="percent">0</span>%):
+                        </td>
+                        <td class="pos-right-align">
+                             + <span class="value">0.00 $</span>
+                        </td>
+                    </tr>
+                    </t>
+                    <t t-if="widget.pos.config.iface_display_taxes" >
+                    <tr class='taxes'>
+                        <td class="pos-right-align">
+                            Taxes:
+                        </td>
+                        <td class="pos-right-align">
+                             + <span class="value">0.00 $</span>
+                        </td>
+                    </tr>
+                    </t>
+                    <tr class='total1'>
+                        <td class="pos-right-align">
+                            Total:
+                        </td>
+                        <td class="pos-right-align">
+                            <span class="value">0.00 $</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="NumpadWidget">
+        <t t-jquery=".numpad-disc" t-operation="replace">
+            <t t-if="widget.pos.config.iface_global_discount" >
+                <button class="numpad-disc">Disc</button>
+            </t>
+            <t t-if="!widget.pos.config.iface_global_discount" >
+                <button class="mode-button numpad-disc" data-mode='discount'>Disc</button>
+            </t>
+        </t>
+    </t>
+
+    <t t-extend="ClientDetails">
+        <t t-jquery=".client-details-right" t-operation="prepend">
+            <div class='client-detail'>
+                <span class='label'>Discount</span>
+                <t t-if='partner.pos_discount'>
+                    <span class='detail client-phone'><t t-esc='partner.pos_discount' /></span>
+                </t>
+                <t t-if='!partner.pos_discount'>
+                    <span class='detail client-phone empty'>0</span>
+                </t>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="ClientDetailsEdit">
+        <t t-jquery=".client-details-right" t-operation="prepend">
+            <div class='client-detail'>
+                <span class='label'>Discount</span>
+                <input class='detail client-email' name='pos_discount' t-att-value='partner.pos_discount || 0'></input>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".js_tip" t-operation="replace">
+            <div t-if='widget.pos.get_order()' t-attf-class='button js_tip #{ widget.pos.get_order().is_tip_set() ? "highlight" : ""} '>
+                <i class='fa fa-heart' /> Tip
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="PosTicket">
+        <t t-jquery="table.receipt-total" t-operation="replace">
+            <table class='receipt-total'>
+                <t t-if="widget.pos.config.iface_display_taxes ||
+                        widget.pos.config.iface_global_discount ||
+                        widget.pos.config.iface_service_fee" >
+                <tr>
+                    <td>Subtotal</td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.format_currency(order.get_subtotal())"/>
+                    </td>
+                </tr>
+                </t>
+                <t t-if="widget.pos.config.iface_global_discount" >
+                <tr>
+                    <td>Discount(<t t-esc="order.get_discount_pc()"/>%)</td>
+                    <td class="pos-right-align">
+                        -<t t-esc="widget.format_currency(order.get_discount_amount())"/>
+                    </td>
+                </tr>
+                </t>
+                <t t-if="widget.pos.config.iface_service_fee" >
+                <tr>
+                    <td>Service(<t t-esc="order.get_service_pc()"/>%)</td>
+                    <td class="pos-right-align">
+                        +<t t-esc="widget.format_currency(order.get_service_amount())"/>
+                    </td>
+                </tr>
+                </t>
+                <t t-if="widget.pos.config.iface_display_taxes" >
+                <t t-foreach="order.get_tax_details()" t-as="taxdetail">
+                    <tr>
+                        <td><t t-esc="taxdetail.name" /></td>
+                        <td class="pos-right-align">
+                            + <t t-esc="widget.format_currency(taxdetail.amount)" />
+                        </td>
+                    </tr>
+                </t>
+                </t>
+                <tr class="emph">
+                    <td>Total:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.format_currency(order.get_total_with_tax()-order.get_tip())"/>
+                    </td>
+                </tr>
+            </table>
+        </t>
+        <t t-jquery="table.receipt-change" t-operation="append">
+            <t t-if="widget.pos.config.iface_allow_tip">
+                <tr>
+                    <td>Tip:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.format_currency(order.get_tip())"/>
+                    </td>
+                </tr>
+            </t>
+        </t>
+    </t>
+</templates>

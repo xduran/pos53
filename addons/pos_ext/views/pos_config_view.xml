@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit3</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cash_control']" position="before">
+                    <field name="iface_change_cashier" />
+                    <field name="iface_change_price" />
+                    <field name="iface_change_discount" />
+                    <field name="iface_change_sing" />
+                </xpath>
+                <xpath expr="//field[@name='journal_ids']" position="after">
+                    <field name="area_location_rules">
+                        <tree editable="bottom">
+                            <field name="area_id"/>
+                            <field name="location_id"/>
+                        </tree>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_pos_config_kanban" model="ir.ui.view">
+            <field name="name">pos.config.kanban.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='open_existing_session_cb_close']" position="attributes">
+                     <attribute name="attrs">{'invisible': [('cash_control','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@class='o_kanban_card_header_title']" position="replace">
+                    <div class="o_kanban_card_header_title">
+                        <div class="o_primary">
+                            <a name="open_existing_session_cb" type="object"><t t-esc="record.name.value"/></a>
+                        </div>
+                        <div class="o_secondary"><t t-esc="record.pos_session_username.value || 'Unused'"/></div>
+                    </div>
+                </xpath>
+                <xpath expr="//div[contains(@class, 'o_kanban_primary_right')]" position="attributes">
+                    <attribute name="groups">point_of_sale.group_pos_manager</attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="active_session"/>
+                    <field name="cash_control"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

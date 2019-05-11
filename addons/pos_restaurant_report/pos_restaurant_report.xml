@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<openerp>
+    <data>
+
+        <report
+            id="action_report_pos_session_receipt"
+            string="Session Receipt"
+            model="pos.session"
+            groups="point_of_sale.group_pos_manager"
+            report_type="qweb-pdf"
+            name="pos_restaurant_report.report_session_receipt"
+            file="pos_restaurant_report.report_session_receipt"
+            paperformat="pos_restaurant_report.paperformat_pos_session_receipt"
+        />
+        <report
+            id="point_of_sale.action_report_pos_session_summary"
+            string="Session Summary"
+            model="pos.session"
+            report_type="qweb-pdf"
+            name="point_of_sale.report_sessionsummary"
+            file="point_of_sale.report_sessionsummary"
+            groups="base.group_no_one"
+        />
+        <report
+            id="action_report_session_full_report"
+            string="Session Full Report"
+            model="pos.session"
+            report_type="qweb-pdf"
+            name="pos_restaurant_report.report_session_full_report"
+            file="pos_restaurant_report.report_session_full_report"
+         />
+    </data>
+</openerp>

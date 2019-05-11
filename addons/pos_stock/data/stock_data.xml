@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="stock_location_pos" model="stock.location">
+        <field name="name">POSS</field>
+        <!--<field name="location_id" ref="stock.stock_location_stock"/>-->
+        <field name="usage">internal</field>
+        <field name="company_id"></field>
+    </record>
+    <function model="stock.location" name="_initial_data"/>
+
+    <record id="picking_type_transfer_poss" model="stock.picking.type">
+        <field name="name">Transfer to POSS</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="default_location_src_id" ref="stock.stock_location_stock"/>
+        <field name="default_location_dest_id" ref="stock_location_pos"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="code">internal</field>
+    </record>
+
+    <record id="stock_location_pos" model="stock.location">
+        <field name="picking_in_type_default" ref="picking_type_transfer_poss"/>
+    </record>
+
+    <record id="point_of_sale.picking_type_posout" model="stock.picking.type">
+        <field name="default_location_src_id" ref="stock_location_pos"/>
+    </record>
+
+    <record id="picking_type_scrapped" model="stock.picking.type">
+        <field name="name">Scrapped products</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="default_location_src_id" ref="stock_location_pos"/>
+        <field name="default_location_dest_id" ref="stock.stock_location_scrapped"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="code">internal</field>
+    </record>
+
+    <record id="picking_type_to_production" model="stock.picking.type">
+        <field name="name">Deliver to production</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="default_location_src_id" ref="stock.stock_location_stock"/>
+        <field name="default_location_dest_id" ref="stock.location_production"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="code">internal</field>
+    </record>
+
+    <record id="picking_type_from_production" model="stock.picking.type">
+        <field name="name">Receive from production</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="default_location_src_id" ref="stock.location_production"/>
+        <field name="default_location_dest_id" ref="stock.stock_location_stock"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="code">internal</field>
+    </record>
+
+    <record id="stock_account.default_category_cost_method" model="ir.property">
+        <field name="value">real</field>
+    </record>
+</odoo>

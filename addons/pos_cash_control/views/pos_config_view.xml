@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="pos_restaurant_discounts_and_charges.view_pos_config_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='cash_control']" position="after">
+                    <field name="cash_diff_profit_reason_id"
+                           attrs="{'invisible':[('cash_control','=', False)],'required':[('cash_control','=', True)]}"/>
+                    <field name="cash_diff_loss_reason_id"
+                           attrs="{'invisible':[('cash_control','=', False)],'required':[('cash_control','=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='tip_product_id']" position="after">
+                    <field name="tip_reason_id" attrs="{'invisible': [('iface_allow_tip', '=', False)],
+                                                        'required': [('iface_allow_tip', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='discount_product_id']" position="after">
+                    <field name="discount_reason_id" attrs="{'invisible': [('iface_global_discount', '=', False)],
+                                                            'required': [('iface_global_discount', '!=', False)]}"/>
+                    <field name="house_discount_reason_id" attrs="{'invisible': [('iface_global_discount', '=', False)],
+                                                            'required': [('iface_global_discount', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='service_product_id']" position="after">
+                    <field name="service_fee_reason_id" attrs="{'invisible': [('iface_service_fee', '=', False)],
+                                                        'required': [('iface_service_fee', '!=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_account_journal_pos_user_form">
+            <field name="name">POS Journal</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="point_of_sale.view_account_journal_pos_user_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_authorized_diff']" position="after">
+                    <field name="default_in_reason_id" attrs="{'invisible':[('journal_user','=', False)]}"/>
+                    <field name="default_out_reason_id" attrs="{'invisible':[('journal_user','=', False)]}"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</openerp>

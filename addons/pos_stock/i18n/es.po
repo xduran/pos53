@@ -1,0 +1,886 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-08 15:26+0000\n"
+"PO-Revision-Date: 2019-04-08 15:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "<span>Action</span>"
+msgstr "<span>Acción</span>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "<span>IPV</span>"
+msgstr "<span>IPV</span>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "<span>Receive</span>"
+msgstr "<span>Recibir</span>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "<span>Reports</span>"
+msgstr "<span>Informes</span>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "<strong>Date: </strong>"
+msgstr "<strong>Fecha: </strong>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "<strong>Location: </strong>"
+msgstr "<strong>Ubicación: </strong>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "<strong>Previous Date: </strong>"
+msgstr "<strong>Fecha Anterior: </strong>"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Adjust"
+msgstr "Ajustar"
+
+#. module: pos_stock
+#: selection:stock.ipv,included_categories:0
+msgid "All Categories"
+msgstr "Todas las categorías"
+
+#. module: pos_stock
+#: model:stock.location,name:pos_stock.stock_location_pos
+msgid "Bar"
+msgstr "Bar"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_15
+msgid "Bottle 1.5L"
+msgstr "Botella 1.5L"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_175
+msgid "Bottle 1.75L"
+msgstr "Botella 1.75L"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_1
+msgid "Bottle 1L"
+msgstr "Botella 1L"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_330
+msgid "Bottle 330ml"
+msgstr "Botella 330ml"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_500
+msgid "Bottle 500ml"
+msgstr "Botella 500ml"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_700
+msgid "Bottle 700ml"
+msgstr "Botella 700ml"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_bottle_750
+msgid "Bottle 750ml"
+msgstr "Botella 750ml"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Cancel Recover"
+msgstr "Cancelar la reposicón"
+
+#. module: pos_stock
+#: selection:stock.recover,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: pos_stock
+#: selection:stock.ipv,ipv_type:0
+msgid "Closing Stock"
+msgstr "IPV de cierre"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_compare_to
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+msgid "Compare to"
+msgstr "Comparar con"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_create_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_create_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_cup
+msgid "Cup"
+msgstr "Vaso"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_quant_ids
+msgid "Current Stock"
+msgstr "Stock Actual"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_date
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+msgid "Date"
+msgstr "Fecha"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_picking_cost_type_default
+msgid "Default Cost Picking Type"
+msgstr "Tipo de albarán de costos por defecto"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_picking_expense_type_default
+msgid "Default Expense Picking Type"
+msgstr "Tipo de albarán de gastos por defecto"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_picking_in_type_default
+msgid "Default Picking In Type"
+msgstr "Tipo de albarán de entrade por defecto"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_picking_scrap_type_default
+msgid "Default Scrap Picking Type"
+msgstr "Tipo de albarán de merma por defecto"
+
+#. module: pos_stock
+#: model:ir.model.fields,help:pos_stock.field_stock_ipv_line_uom_id
+#: model:ir.model.fields,help:pos_stock.field_stock_move_uom_id
+msgid "Default Unit of Measure used for all stock operation."
+msgstr "Unidad de medida por defecto utilizada para todas las operaciones de stock."
+
+#. module: pos_stock
+#: model:stock.picking.type,name:pos_stock.picking_type_to_production
+msgid "Deliver to production"
+msgstr "Entrega a producción"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_location_dest_id
+msgid "Destination Location"
+msgstr "Ubicación destino"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_location_dest_id
+msgid "Destination Location Zone"
+msgstr "Ubicación destino"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Details"
+msgstr "Detalles"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_report_pos_stock_report_location_real_stock_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_display_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pos_stock
+#: selection:product.processing,state:0
+#: selection:stock.ipv,state:0
+#: selection:stock.move.analysis,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: pos_stock
+#: selection:product.processing,state:0
+#: selection:stock.ipv,state:0
+#: selection:stock.move.analysis,state:0
+#: selection:stock.recover,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_drink
+msgid "Drink"
+msgstr "Trago"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_qty_end
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_end_date
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "End"
+msgstr "Fin"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_form
+msgid "Finish products"
+msgstr "Productos terminados"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_glass
+msgid "Glass"
+msgstr "Copa"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_recover_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_id
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_id
+#: model:ir.model.fields,field_description:pos_stock.field_report_pos_stock_report_location_real_stock_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_stock
+#: model:ir.actions.report.xml,name:pos_stock.action_report_location_real_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_ipv_id
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+msgid "IPV"
+msgstr "IPV"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_category_important_to_print
+msgid "IPV important"
+msgstr "Importante para el IPV"
+
+#. module: pos_stock
+#: code:addons/pos_stock/models/stock_location.py:128
+#, python-format
+msgid "IPV to Print"
+msgstr "IPV a imprimir"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_stock_ipv
+#: model:ir.ui.menu,name:pos_stock.menu_stock_ipv
+msgid "IPVs"
+msgstr "IPVs"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_qty_in
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+#: selection:product.processing.line,type:0
+msgid "In"
+msgstr "Entrada"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_analysis_form
+msgid "In Moves"
+msgstr "Movimientos de entrada"
+
+#. module: pos_stock
+#: selection:stock.recover,state:0
+msgid "In Progress"
+msgstr "En proceso"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_in_value
+msgid "In Value"
+msgstr "Valor de entradas"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_in_moves_domain
+msgid "In moves domain"
+msgstr "Dominio de movimientos de entrada"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_inventory_include_all_products
+msgid "Include all products"
+msgstr "Incluir todos los productos"
+
+#. module: pos_stock
+#: model:ir.model.fields,help:pos_stock.field_product_category_important_to_print
+msgid "Include as IPV important categories."
+msgstr "Incluir dentro de las categorías importantes del IPV."
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_included_categories
+msgid "Included Categories"
+msgstr "Categorías Incluidas"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_categ_id
+msgid "Internal Category"
+msgstr "Categoría interna"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_stock_picking_internal
+#: model:ir.ui.menu,name:pos_stock.menu_stock_picking_internal
+msgid "Internal Transfers"
+msgstr "Transferencias internas"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.inventory_action
+#: model:ir.model,name:pos_stock.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_inventory_form
+msgid "Inventory Adjustments"
+msgstr "Ajustes de inventario"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_inventory_value
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Inventory Value"
+msgstr "Valor del inventario"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_production_location
+msgid "Is a Production Location?"
+msgstr "Is a Production Location?"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_report_pos_stock_report_location_real_stock___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover___last_update
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_write_uid
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_write_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_location_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_location_id
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Manufacture"
+msgstr "Producir"
+
+#. module: pos_stock
+#: model:stock.picking.type,name:pos_stock.picking_type_scrapped
+msgid "Merma Almacen"
+msgstr "Merma Almacen"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "More <i class=\"fa fa-caret-down\"/>"
+msgstr "Más <i class=\"fa fa-caret-down\"/>"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_move_value
+msgid "Move value"
+msgstr "Valor de transferencia"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_tree
+msgid "Moves"
+msgstr "Movimientos"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_stock_move_analysis
+#: model:ir.ui.menu,name:pos_stock.menu_action_stock_move_analysis
+msgid "Moves Analysis"
+msgstr "Analisis de transferencias"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_name
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_net_value
+msgid "Net Value"
+msgstr "Valor Neto"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_mrp_production
+msgid "New Production Order"
+msgstr "New Production Order"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_picking_form
+msgid "New Transfer"
+msgstr "Nueva transferencia"
+
+#. module: pos_stock
+#: code:addons/pos_stock/models/product_processing.py:54
+#, python-format
+msgid "No finish products listed."
+msgstr "No teine productos terminados."
+
+#. module: pos_stock
+#: code:addons/pos_stock/models/product_processing.py:51
+#, python-format
+msgid "No raw materials listed."
+msgstr "No tiene materias primas."
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_note
+msgid "Note"
+msgstr "Nota"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "Notes"
+msgstr "Notas"
+
+#. module: pos_stock
+#: selection:stock.ipv,included_categories:0
+msgid "Only Important Categories"
+msgstr "Solo categorías importantes"
+
+#. module: pos_stock
+#: selection:stock.ipv,ipv_type:0
+msgid "Opening Stock"
+msgstr "IPV de apertura"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_form
+msgid "Other information"
+msgstr "Otra información"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_qty_out
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+#: selection:product.processing.line,type:0
+msgid "Out"
+msgstr "Salida"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_analysis_form
+msgid "Out Moves"
+msgstr "Movimientos de Salidas"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_out_value
+msgid "Out Value"
+msgstr "Valor de Salidas"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_out_moves_domain
+msgid "Out moves domain"
+msgstr "Dominio de movimientos de salida"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_picking_id
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_picking_type_in_id
+msgid "Picking In Type"
+msgstr "Tipo de albarán de entrada"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_picking_type_out_id
+msgid "Picking Out Type"
+msgstr "Tipo de albarán de salida"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_picking_in
+msgid "Picking in"
+msgstr "Albarán de entrada"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_picking_out
+msgid "Picking out"
+msgstr "Albarán de salida"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_previous_date
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_previous_date
+msgid "Previous Date"
+msgstr "Fecha Anterior"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_ipv_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_form
+msgid "Process"
+msgstr "Procesar"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_procurement_order
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_product_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_product_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_product_id
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "Product"
+msgstr "Producto"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_product_category
+#: model:ir.model.fields,field_description:pos_stock.field_stock_inventory_categ_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_categ_id
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_recover_filter
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_product_processing_form
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_processing_id
+msgid "Product Processing"
+msgstr "Procesamiento de productos"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida del producto"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_location_prod_id
+msgid "Production Location"
+msgstr "Ubicación de producción"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_ids
+msgid "Products"
+msgstr "Productos"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_lines_in
+msgid "Products In"
+msgstr "Productos de entrada"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_lines_out
+msgid "Products Out"
+msgstr "Productos de salida"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_product_processing
+#: model:ir.ui.menu,name:pos_stock.menu_product_processing
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_tree
+msgid "Products Processing"
+msgstr "Procesamiento de productos"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_stock_quant_filtered
+msgid "Quants"
+msgstr "Quants"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_form
+msgid "Raw materials"
+msgstr "Materias primas"
+
+#. module: pos_stock
+#: model:stock.picking.type,name:pos_stock.picking_type_from_production
+msgid "Receive from production"
+msgstr "Recepcionar desde producción"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_recover
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_recover_id
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Recover"
+msgstr "Reposición"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_date
+msgid "Recover Date"
+msgstr "Fecha de reposición"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_recover_line
+msgid "Recover Line"
+msgstr "Recover Line"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_recover_form
+#: model:ir.actions.act_window,name:pos_stock.action_stock_recover
+#: model:ir.ui.menu,name:pos_stock.menu_stock_recover
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_recover_tree
+msgid "Recover Product"
+msgstr "Reposición de mercancía"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_ids
+msgid "Recoveries"
+msgstr "Reposiciones"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_tree
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_user_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_analysis_form
+msgid "Results"
+msgstr "Resultados"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Scrap"
+msgstr "Merma"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_recover_filter
+msgid "Search Recover"
+msgstr "Buscar Reposición"
+
+#. module: pos_stock
+#: model:ir.model.fields,help:pos_stock.field_stock_ipv_line_categ_id
+msgid "Select category for the current product"
+msgstr "Seleccione la categoría para el producto actual."
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_location_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_location_src_id
+msgid "Source Location"
+msgstr "Ubicación origen"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_location_id
+msgid "Source Location Zone"
+msgstr "Ubicación origen"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_qty_start
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_start_date
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+msgid "Start"
+msgstr "Inicio"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_analysis_form
+msgid "Start Analysis"
+msgstr "Comenzar Análisis"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Start Recover"
+msgstr "Iniciar reposición"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_state
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_state
+#: model:ir.ui.view,arch_db:pos_stock.stock_ipv_search_view
+msgid "State"
+msgstr "Provincia"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_state
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_state
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_recover_filter
+msgid "Status"
+msgstr "Estado"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: pos_stock
+#: model:ir.actions.act_window,name:pos_stock.action_stock_move_tree
+#: model:ir.ui.menu,name:pos_stock.stock_moves_menu
+msgid "Stock Moves"
+msgstr "Movimientos de existencias"
+
+#. module: pos_stock
+#: model:ir.model.fields,help:pos_stock.field_stock_location_quant_ids
+msgid "The products storage in this location"
+msgstr "Los productos se almacenan en esta ubicación"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_tree
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_quant_tree
+msgid "Total Value"
+msgstr "Valor total"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_recover_line_product_qty
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Transfer Quantity"
+msgstr "Cantidad a transferir"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Transfer to Costs"
+msgstr "Transferir a costos"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.stock_location_kanban_view
+msgid "Transfer to Expenses"
+msgstr "Transferir a gastos"
+
+#. module: pos_stock
+#: model:stock.picking.type,name:pos_stock.picking_type_transfer_poss
+msgid "Transferencias de Almacén a Bar"
+msgstr "Transferencias de Almacén a Bar"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_type
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_ipv_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_product_processing_line_uom_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_ipv_line_uom_id
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_uom_id
+#: model:ir.ui.view,arch_db:pos_stock.view_stock_move_tree
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.report_location_real_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "UoM"
+msgstr "UdM"
+
+#. module: pos_stock
+#: model:ir.model.fields,field_description:pos_stock.field_stock_move_analysis_use_expected_date
+msgid "Use expected date"
+msgstr "Usar fecha prevista"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_recover_form
+msgid "Validate Recover"
+msgstr "Validar reposición"
+
+#. module: pos_stock
+#: selection:stock.recover,state:0
+msgid "Validated"
+msgstr "Validado"
+
+#. module: pos_stock
+#: model:ir.ui.view,arch_db:pos_stock.view_product_processing_form
+msgid "e.g. Meat preparation"
+msgstr "ejemplo: Preparación de la carne"
+
+#. module: pos_stock
+#: model:product.uom,name:pos_stock.product_uom_ml
+msgid "ml"
+msgstr "ml"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_product_processing
+msgid "product.processing"
+msgstr "product.processing"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_product_processing_line
+msgid "product.processing.line"
+msgstr "product.processing.line"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_report_pos_stock_report_location_real_stock
+msgid "report.pos_stock.report_location_real_stock"
+msgstr "report.pos_stock.report_location_real_stock"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_ipv
+msgid "stock.ipv"
+msgstr "stock.ipv"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_ipv_line
+msgid "stock.ipv.line"
+msgstr "stock.ipv.line"
+
+#. module: pos_stock
+#: model:ir.model,name:pos_stock.model_stock_move_analysis
+msgid "stock.move.analysis"
+msgstr "stock.move.analysis"
+

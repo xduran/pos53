@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_processing_manager,product.processing manager,model_product_processing,stock.group_stock_manager,1,1,1,0
+access_product_processing_line_manager,product.processing.line manager,model_product_processing_line,stock.group_stock_manager,1,1,1,1
+access_stock_recover_manager,stock.recover manager,model_stock_recover,stock.group_stock_manager,1,1,1,1
+access_stock_recover_line_manager,stock.recover.line manager,model_stock_recover_line,stock.group_stock_manager,1,1,1,1
+access_stock_ipv_manager,stock.ipv manager,model_stock_ipv,stock.group_stock_user,1,1,1,1
+access_stock_ipv_line_manager,stock.ipv.line manager,model_stock_ipv_line,stock.group_stock_user,1,1,1,1

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="product_uom_ml" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">ml</field>
+        <field name="factor">1.0</field>
+    </record>
+    <record id="product.product_uom_litre" model="product.uom">
+        <field name="factor_inv" eval="1000"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product.product_uom_floz" model="product.uom">
+        <field name="active" eval="False"/>
+        <field name="factor_inv" eval="29.573529"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product.product_uom_qt" model="product.uom">
+        <field name="active" eval="False"/>
+        <field name="factor_inv" eval="946.352946"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product.product_uom_gal" model="product.uom">
+        <field name="active" eval="False"/>
+        <field name="factor_inv" eval="3785.411784"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_175" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 1.75L</field>
+        <field name="factor_inv" eval="1750"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_15" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 1.5L</field>
+        <field name="factor_inv" eval="1500"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_1" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 1L</field>
+        <field name="factor_inv" eval="1000"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_750" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 750ml</field>
+        <field name="factor_inv" eval="750"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_700" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 700ml</field>
+        <field name="factor_inv" eval="700"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_500" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 500ml</field>
+        <field name="factor_inv" eval="500"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_bottle_330" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Bottle 330ml</field>
+        <field name="factor_inv" eval="330"/>
+        <field name="uom_type">bigger</field>
+    </record>
+
+    <record id="product_uom_drink" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Drink</field>
+        <field name="factor_inv" eval="50"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_cup" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Cup</field>
+        <field name="factor_inv" eval="250"/>
+        <field name="uom_type">bigger</field>
+    </record>
+    <record id="product_uom_glass" model="product.uom">
+        <field name="category_id" ref="product.product_uom_categ_vol"/>
+        <field name="name">Glass</field>
+        <field name="factor_inv" eval="150"/>
+        <field name="uom_type">bigger</field>
+    </record>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="Orderline">
+        <t t-jquery=".price" t-operation="append">
+            <t t-if="line.work_order_stage">
+                <br/>
+                <em t-attf-class="#{ line.work_order_stage === 3 ? 'ready' : 'not-ready' }">
+                    <t t-esc="line.get_work_order_stage_name()"/>
+                </em>
+            </t>
+        </t>
+        <t t-jquery=".info-list" t-operation="append">
+            <t t-if="line.work_order_stage and line.get_quantity_str() === '1' and !line.selected ">
+                <br/>
+            </t>
+        </t>
+    </t>
+
+</templates>

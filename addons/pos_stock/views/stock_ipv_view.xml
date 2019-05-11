@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_stock_ipv_tree" model="ir.ui.view">
+            <field name="name">stock.ipv.tree</field>
+            <field name="model">stock.ipv</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="location_id"/>
+                    <field name="state"/>
+                    <field name="compare_to"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_stock_ipv_form" model="ir.ui.view">
+            <field name="name">stock.ipv.form</field>
+            <field name="model">stock.ipv</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_print" string="Print" type="object" class="btn-primary"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="included_categories" widget="radio"/>
+                            </group>
+                            <group>
+                                <!--<field name="location_id" invisible="context.get('default_location_id', False)"/>-->
+                                <field name="location_id" domain="[('usage','=', 'internal')]" readonly="context.get('default_location_id', False)"/>
+                                <field name="ipv_type" widget="radio"/>
+                                <field name="compare_to" domain="[('location_id', '=', location_id)]" attrs="{'invisible': [('ipv_type', '=', 'initial')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_category_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.category.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="important_to_print"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="stock_ipv_search_view">
+            <field name="name">stock.ipv.search</field>
+            <field name="model">stock.ipv</field>
+            <field name="arch" type="xml">
+               <search string="IPV">
+                   <field name="location_id"/>
+                   <field name="state"/>
+                   <field name="compare_to"/>
+                   <field name="date"/>
+                   <separator/>
+                   <group expand="0" string="Group By">
+                       <filter string="State" name="state" context="{'group_by':'state'}"/>
+                       <filter string="Location" name="location_id" context="{'group_by':'location_id'}"/>
+                       <filter string="Compare to" name="compare_to" context="{'group_by':'compare_to'}"/>
+                       <filter string="Date" name="date" context="{'group_by':'date'}"/>
+                   </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_stock_ipv">
+            <field name="name">IPVs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.ipv</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="context">{'search_default_location_id': 1}</field>-->
+        </record>
+        <menuitem parent="stock.menu_stock_inventory_control" id="menu_stock_ipv"
+                  action="action_stock_ipv" sequence="1" groups="stock.group_stock_manager"/>
+
+    </data>
+</openerp>

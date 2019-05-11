@@ -1,0 +1,66 @@
+@page {
+    margin: 0;
+}
+
+@media print {
+    * {
+        color: black !important;
+    }
+    body {
+        margin: 0;
+        color: white !important;
+    }
+    .oe_leftbar,
+    .pos .pos-topheader,
+    .pos .pos-leftpane,
+    .pos .keyboard_frame,
+    .pos .receipt-screen header,
+    .pos .receipt-screen .top-content,
+    .pos .receipt-screen .centered-content .button {
+        display: none !important;
+    }
+    .pos,
+    .pos .pos-content,
+    .pos .rightpane,
+    .pos .screen,
+    .pos .window,
+    .pos .window .subwindow,
+    .pos .subwindow .subwindow-container{
+        display: block;
+        position: static;
+        height: auto;
+    }
+    .pos{
+        background: white !important;
+    }
+    .pos .rightpane {
+        left: 0px !important;
+        background-color: white;
+    }
+    .pos .receipt-screen {
+        text-align: left;
+    }
+    .pos .receipt-screen .centered-content{
+        position: static;
+        border: none;
+    }
+    .pos .pos-receipt-container {
+        text-align: left;
+    }
+    .pos-actionbar {
+        display: none !important;
+    }
+    .debug-widget{
+        display: none !important;
+    }
+    .pos *{
+        text-shadow: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+    .pos .pos-sale-ticket{
+        font-size: 12px !important;
+        width: 48mm !important;
+        width: 48mm !important;
+    }
+}

@@ -1,0 +1,24 @@
+.screen .selected-garnish-content{
+    position: absolute;
+    left: 0px; top: 0px; right: 0px;
+    height: 200px;
+    border-bottom: dashed 1px rgb(215,215,215);
+    text-align: center;
+}
+
+.screen .available-garnish-content{
+    position: absolute;
+    right: 0%; top: 201px; bottom: 0px;
+    left: 0%;
+}
+
+.product .button .fa-cutlery{
+    font-size: 30px;
+    color: darkgrey;
+    vertical-align: middle;
+}
+
+.screen .top-content .button.clear{
+    right: 0px;
+    margin-right: 16px;
+}

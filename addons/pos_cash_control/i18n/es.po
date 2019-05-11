@@ -1,0 +1,468 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_cash_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-02 16:29+0000\n"
+"PO-Revision-Date: 2016-11-02 12:32-0500\n"
+"Last-Translator: Javier Ruiz Durán <javier.ruiz.duran@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_nbr
+msgid "# of Lines"
+msgstr "# de líneas"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_pos_session_inherit_form
+msgid "<span class=\"o_stat_text\">Cash Operations</span>"
+msgstr "<span class=\"o_stat_text\">Operaciones de efectivo</span>"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,help:pos_cash_control.action_cash_box_operation
+msgid ""
+"A cash box operation is an income or outcome registered during a pos session."
+msgstr ""
+"Una operación de efectivo es una entrada o salida de dinero registrada "
+"durante una sesión del punto de venta."
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_account_bank_statement_cashbox
+msgid "Account Bank Statement Cashbox Details"
+msgstr "Detalles de caja"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.cash_difference_loss
+msgid "Balance losses"
+msgstr "Perdidas en el cuadre de caja"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.cash_difference_profit
+msgid "Balance profits"
+msgstr "Ganancias en el cuadre de caja"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,name:pos_cash_control.action_report_cash_all
+#: model:ir.ui.view,arch_db:pos_cash_control.view_report_cash_pivot
+msgid "Cash Analysis"
+msgstr "Análisis de efectivo"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_form
+msgid "Cash Box Operation"
+msgstr "Operación de caja"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.cash_box_reason_form
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_tree
+msgid "Cash Box Operation Reason"
+msgstr "Motivo de operación de caja"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_category_tree
+msgid "Cash Box Operation Reason Category"
+msgstr "Partida de operación de caja"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,name:pos_cash_control.action_cash_box_operation
+#: model:ir.ui.menu,name:pos_cash_control.menu_cash_box_operations
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_tree
+msgid "Cash Box Operations"
+msgstr "Operaciones de caja"
+
+#. module: pos_cash_control
+#: model:ir.ui.menu,name:pos_cash_control.menu_cash_box_control
+msgid "Cash Control"
+msgstr "Control de efectivo caja"
+
+#. module: pos_cash_control
+#: model:cash.box.reason.category,name:pos_cash_control.cash_difference_flow
+msgid "Cash Differences"
+msgstr "Ajustes"
+
+#. module: pos_cash_control
+#: model:ir.ui.menu,name:pos_cash_control.menu_report_cash_all
+msgid "Cash Flow"
+msgstr "Flujo de efectivo"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_session_cash_operations
+msgid "Cash Operations"
+msgstr "Operaciones de caja"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_account_cashbox_line
+msgid "CashBox Line"
+msgstr "Línea de caja"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_id_5630
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_reason_category_id
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_filter
+msgid "Category"
+msgstr "Categoría"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_create_uid
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_create_uid
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_create_date
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_create_date
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,name:pos_cash_control.action_currency_values
+#: model:ir.model,name:pos_cash_control.model_currency_values
+#: model:ir.ui.menu,name:pos_cash_control.menu_currency_values
+#: model:ir.ui.view,arch_db:pos_cash_control.currency_values_form
+#: model:ir.ui.view,arch_db:pos_cash_control.view_currency_values_tree
+msgid "Currency Values"
+msgstr "Desglose de Moneda"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_customers_discounts
+msgid "Customers Discounts"
+msgstr "Descuentos"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_customers_tips
+msgid "Customers Tips"
+msgstr "Propinas de clientes"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_cash_change
+msgid "Customers change"
+msgstr "Vuelto"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_discount_reason_id
+msgid "Discount Reason"
+msgstr "Motivo Descuento"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_display_name
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_display_name
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_display_name
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pos_cash_control
+#: model:cash.box.reason.category,name:pos_cash_control.expenses_flow
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_house_discounts
+msgid "House Discounts"
+msgstr "Cuenta casa"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_house_discount_reason_id
+msgid "House Tab Reason"
+msgstr "Motivo cuenta casa"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_id
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_id
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_id
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_cash_box_in
+msgid "In"
+msgstr "Poner Dinero"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_account_journal_default_in_reason_id
+msgid "In Reason"
+msgstr "Motivo de entrada"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_filter
+msgid "Income"
+msgstr "Ingreso"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason___last_update
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category___last_update
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values___last_update
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_write_uid
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_write_uid
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_write_date
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_write_date
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_cash_diff_loss_reason_id
+msgid "Loss Reason"
+msgstr "Motivo de pérdida"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_name
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_name
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_in_note
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_out_note
+msgid "Notes"
+msgstr "Notas"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,name:pos_cash_control.action_cash_box_reason
+#: model:ir.ui.menu,name:pos_cash_control.menu_cash_box_reason
+msgid "Operation Reasons"
+msgstr "Motivos de operación"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_form
+msgid "Original reason"
+msgstr "Motivo Original"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_cash_box_out
+msgid "Out"
+msgstr "Sacar Dinero"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_account_journal_default_out_reason_id
+msgid "Out Reason"
+msgstr "Motivo de salida"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_filter
+msgid "Outcome"
+msgstr "Egreso"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_pos_order
+msgid "Point of Sale"
+msgstr "Terminal punto de venta"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_cash_diff_profit_reason_id
+msgid "Profit Reason"
+msgstr "Motivo de ganancias"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_account_bank_statement_line_reason_id
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_reason_id
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_account_bank_statement_line_reason_category_id
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+msgid "Reason Category"
+msgstr "Partida"
+
+#. module: pos_cash_control
+#: model:ir.actions.act_window,name:pos_cash_control.action_cash_box_reason_category
+#: model:ir.ui.menu,name:pos_cash_control.menu_cash_box_reason_category
+msgid "Reasons Categories"
+msgstr "Partidas"
+
+#. module: pos_cash_control
+#: model:cash.box.reason.category,name:pos_cash_control.sales_cash_flow
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_cash_payment
+msgid "Sales in Cash"
+msgstr "Ventas en efectivo"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.sales_voucher_payment
+msgid "Sales in Voucher"
+msgstr "Ventas en Voucher"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_reason_filter
+msgid "Search Cash Box Operation Reason"
+msgstr "Buscar motivos de operación de caja"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+msgid "Search Cash Box Operations"
+msgstr "Buscar operaciones de caja"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_category_sequence
+#: model:ir.model.fields,field_description:pos_cash_control.field_cash_box_reason_sequence
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_service_fee_reason_id
+msgid "Service Reason"
+msgstr "Motivo Servicio"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_account_bank_statement_line_pos_session_id
+#: model:ir.model.fields,field_description:pos_cash_control.field_report_cash_pos_session_id
+msgid "Session"
+msgstr "Sesión"
+
+#. module: pos_cash_control
+#: code:addons/pos_cash_control/models/cash_box_reason.py:200
+#, python-format
+msgid ""
+"There is no receivable account defined to make payment for the partner: \"%s"
+"\" (id:%d)."
+msgstr ""
+"No hay una cuenta contable por cobrar definida para hacer el pago de esta "
+"empresa: \"%s\" (id: %d)."
+
+#. module: pos_cash_control
+#: code:addons/pos_cash_control/models/cash_box_reason.py:198
+#, python-format
+msgid "There is no receivable account defined to make payment."
+msgstr "No hay cuenta a cobrar definida para hacer el pago."
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_pos_config_tip_reason_id
+msgid "Tip Reason"
+msgstr "Motivo Propina"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+msgid "Today"
+msgstr "Hoy"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: pos_cash_control
+#: model:ir.model.fields,field_description:pos_cash_control.field_currency_values_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: pos_cash_control
+#: model:cash.box.reason,name:pos_cash_control.voucher_to_cash
+msgid "Voucher to cash"
+msgstr "Voucher por cobrar"
+
+#. module: pos_cash_control
+#: model:ir.ui.view,arch_db:pos_cash_control.view_cash_box_operation_search
+msgid "Yesterday"
+msgstr "Ayer"
+
+#. module: pos_cash_control
+#: code:addons/pos_cash_control/models/cash_box_reason.py:215
+#, python-format
+msgid "You have to open at least one cashbox."
+msgstr "Tiene que abrir al menos una caja."
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_cash_box_in
+msgid "cash.box.in"
+msgstr "cash.box.in"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_cash_box_out
+msgid "cash.box.out"
+msgstr "cash.box.out"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_cash_box_reason
+msgid "cash.box.reason"
+msgstr "cash.box.reason"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_cash_box_reason_category
+msgid "cash.box.reason.category"
+msgstr "cash.box.reason.category"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_pos_config
+msgid "pos.config"
+msgstr "Configuración del TPV"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_pos_session
+msgid "pos.session"
+msgstr "Sesión TPV"
+
+#. module: pos_cash_control
+#: model:ir.model,name:pos_cash_control.model_report_cash
+msgid "report.cash"
+msgstr "report.cash"

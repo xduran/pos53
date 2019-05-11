@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_pos_order_filter_inherit" model="ir.ui.view">
+            <field name="name">pos.order.filter</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="date_order"/>
+                    <separator/>
+                    <filter string="Today" name="today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Yesterday" name="yesterday" domain="[('date', '=', (context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]" />
+                    <!--<filter string="This Week" name="this_week" domain="[('week', '=', context_today().strftime('%Y-%W'))]" />-->
+                    <!--<filter string="Last Week" name="last_week" domain="[('week', '=', (context_today()-datetime.timedelta(days=7)).strftime('%Y-%W'))]" />-->
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_order_form">
+            <field name="name">pos.order.form.view.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='picking_id']" position="after">
+                    <field name="order_cost"/>
+                </xpath>
+                <xpath expr="//page[@name='extra']" position="after">
+                    <page name="pickings" string="Pickings">
+                        <field name="picking_ids">
+                            <tree string="Picking list">
+                                <field name="name"/>
+                                <field name="location_id"/>
+                                <field name="location_dest_id"/>
+                                <field name="origin"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_order_tree_inherit">
+            <field name="name">Orders Inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="order_cost" sum="Total Cost" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderChangeReceipt">
+        <t t-jquery="receipt" t-operation="replace">
+            <receipt
+                align='center'
+                width='40'
+                size='normal'
+                line-ratio='0.4'
+                value-decimals='3'
+                value-thousands-separator=''
+                value-autoint='on'
+            >
+            <div size='normal' ><t t-esc="changes.name" /></div>
+            <t t-if="changes.floor || changes.table">
+                <div><span bold='on'><t t-esc="changes.floor" /></span> / <span bold='on'><t t-esc="changes.table"/></span></div>
+            </t>
+            <t t-if="changes.waiter">
+                <div><span><t t-esc="changes.waiter" /></span></div>
+            </t>
+            <br/>
+            <t t-if="changes.cancelled.length > 0">
+                <div color='red'>
+                    <div bold='on'>CANCELLED <span bold='off'><t t-esc='changes.time.hours' />:<t t-esc='changes.time.minutes' /></span> </div>
+                    <br />
+                    <t t-foreach="changes.cancelled" t-as="change">
+                        <div align='left'><span bold='on' size='double-height'><t t-esc="change.qty" /></span><span><t t-esc="change.name" /></span></div>
+                        <t t-if="change.garnish">
+                            <div align='left'><span>(<t t-esc="change.garnish" />)</span></div>
+                        </t>
+                        <t t-if="change.note">
+                            <div><span font='b' bold='off' line-ratio='0.4' indent='1' width='30'>--- <t t-esc="change.note" /></span></div>
+                        </t>
+                    </t>
+                    <br />
+                </div>
+            </t>
+            <t t-if="changes.new.length > 0">
+                <div bold='on'>NEW <span bold='off' ><t t-esc='changes.time.hours' />:<t t-esc='changes.time.minutes' /></span> </div>
+                <br />
+                <t t-foreach="changes.new" t-as="change">
+                    <div align='left'><span bold='on' size='double-height'><t t-esc="change.qty" /></span><span><t t-esc="change.name" /></span></div>
+                    <t t-if="change.garnish">
+                        <div align='left'><span>(<t t-esc="change.garnish" />)</span></div>
+                    </t>
+                    <t t-if="change.note">
+                        <div><span font='b' bold='off' line-ratio='0.4' indent='1' width='30'>--- <t t-esc="change.note" /></span></div>
+                    </t>
+                </t>
+                <br />
+            </t>
+        </receipt>
+        </t>
+    </t>
+    <t t-extend="BillReceipt">
+        <t t-jquery="receipt" t-operation="replace">
+            <receipt align='center' width='40' value-thousands-separator='' >
+                <!--<t t-if='receipt.company.logo'>-->
+                    <!--<div indent="5" align='center'>-->
+                        <!--<img  indent="5" t-att-src='receipt.company.logo' />-->
+                    <!--</div>-->
+                <!--</t>-->
+                <div font='b'>
+                    <t t-if='receipt.company.name'>
+                        <div size="double"><t t-esc='receipt.company.name' /></div>
+                    </t>
+                    <t t-if='receipt.company.phone'>
+                        <div>Tel:<t t-esc='receipt.company.phone' /></div>
+                    </t>
+                    <t t-if='receipt.company.email'>
+                        <div><t t-esc='receipt.company.email' /></div>
+                    </t>
+                    <t t-if='receipt.company.website'>
+                        <div><t t-esc='receipt.company.website' /></div>
+                    </t>
+                    <div>
+                        <div><t t-esc='receipt.date.localestring' /></div>
+                    </div>
+                    <t t-if='receipt.table'>
+                        <div><t t-esc="receipt.floor"/>/<t t-esc="receipt.table"/></div>
+                    </t>
+                    <t t-if='receipt.waiter'>
+                        <div>Served by <t t-esc='receipt.waiter' /></div>
+                    </t>
+                    <t t-if='receipt.client'>
+                        <div>Client: <t t-esc='receipt.client' /></div>
+                    </t>
+                    <t t-if='receipt.header'>
+                        <div><t t-esc='receipt.header' /></div>
+                    </t>
+                </div>
+                <br /><br />
+
+                <!-- Orderlines -->
+                <div line-ratio='0.6'>
+                    <t t-foreach='receipt.orderlines' t-as='line'>
+                        <t>
+                            <div align="center">
+                                <t t-esc='line.string_to_print' />
+                            </div>
+                        </t>
+                    </t>
+                </div>
+
+                <!-- TOTALS -->
+                <div align="right">
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div><t t-esc='receipt.subtotal_text'/></div>
+                    <div><t t-esc='receipt.discount_text'/></div>
+                    <div><t t-esc='receipt.service_text'/></div>
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div size="double-height"><t t-esc='receipt.total_text'/></div>
+                </div>
+
+                <!-- Footer -->
+                <t t-if='receipt.footer_xml'>
+                    <br/>
+                    <br/>
+                    <t t-raw='receipt.footer_xml' />
+                </t>
+                <t t-if='!receipt.footer_xml and receipt.footer'>
+                    <br/>
+                    <br/>
+                    <t t-esc='receipt.footer' />
+                </t>
+
+            </receipt>
+        </t>
+    </t>
+    <t t-extend="XmlReceipt">
+        <t t-jquery="receipt" t-operation="replace">
+            <receipt align='center' width='40' value-thousands-separator='' >
+                <!--<t t-if='receipt.company.logo'>-->
+                    <!--<div indent="5" align='center'>-->
+                        <!--<img  indent="5" t-att-src='receipt.company.logo' />-->
+                    <!--</div>-->
+                <!--</t>-->
+                <div font='b'>
+                    <t t-if='receipt.company.name'>
+                        <div size="double"><t t-esc='receipt.company.name' /></div>
+                    </t>
+                    <t t-if='receipt.company.phone'>
+                        <div>Tel:<t t-esc='receipt.company.phone' /></div>
+                    </t>
+                    <t t-if='receipt.company.email'>
+                        <div><t t-esc='receipt.company.email' /></div>
+                    </t>
+                    <t t-if='receipt.company.website'>
+                        <div><t t-esc='receipt.company.website' /></div>
+                    </t>
+                    <div>
+                        <div><t t-esc='receipt.date.localestring' /></div>
+                    </div>
+                    <t t-if='receipt.table'>
+                        <div><t t-esc="receipt.floor"/>/<t t-esc="receipt.table"/></div>
+                    </t>
+                    <t t-if='receipt.waiter'>
+                        <div>Served by <t t-esc='receipt.waiter' /></div>
+                    </t>
+                    <t t-if='receipt.cashier'>
+                        <div>Cashier: <t t-esc='receipt.cashier' /></div>
+                    </t>
+                    <t t-if='receipt.client'>
+                        <div>Client: <t t-esc='receipt.client' /></div>
+                    </t>
+                    <t t-if='receipt.header'>
+                        <div><t t-esc='receipt.header' /></div>
+                    </t>
+                </div>
+                <br /><br />
+
+                <!-- Orderlines -->
+                <div line-ratio='0.6'>
+                    <t t-foreach='receipt.orderlines' t-as='line'>
+                        <t>
+                            <div align="center">
+                                <t t-esc='line.string_to_print' />
+                            </div>
+                        </t>
+                    </t>
+                </div>
+
+                <!-- TOTALS -->
+                <div align="right">
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div><t t-esc='receipt.subtotal_text'/></div>
+                    <div><t t-esc='receipt.discount_text'/></div>
+                    <div><t t-esc='receipt.service_text'/></div>
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div size="double-height"><t t-esc='receipt.total_text'/></div>
+                    <br/>
+                </div>
+
+                <div align="right">
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <t t-foreach='receipt.paymentlines' t-as='line'>
+                        <div><t t-esc='line.string_to_print'/></div>
+                    </t>
+                    <div><t t-esc='receipt.change_text'/></div>
+                    <div><t t-esc='receipt.tip_text'/></div>
+                </div>
+
+                <!-- Footer -->
+                <t t-if='receipt.footer_xml'>
+                    <br/>
+                    <t t-raw='receipt.footer_xml' />
+                </t>
+                <t t-if='!receipt.footer_xml and receipt.footer'>
+                    <br/>
+                    <t t-esc='receipt.footer' />
+                </t>
+
+            </receipt>
+        </t>
+    </t>
+</templates>

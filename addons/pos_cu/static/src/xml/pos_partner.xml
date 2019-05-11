@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ClientDetailsEdit">
+        <t t-jquery=".client-address-city, .barcode, .vat, .client-address-zip">
+            this.parent().remove();
+        </t>
+    </t>
+    <t t-extend="ClientDetails">
+        <t t-jquery=".client-id, .vat">
+            this.parent().parent().remove();
+        </t>
+    </t>
+
+</templates>

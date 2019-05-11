@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="base.main_partner" model="res.partner">
+            <field name="state_id" ref="base_cu.hab"/>
+            <field name="country_id" ref="base.cu"/>
+            <field name="website"></field>
+            <field name="email"></field>
+        </record>
+        <record id="base.main_company" model="res.company">
+            <field name="currency_id" ref="base.CUP"/>
+        </record>
+    </data>
+</openerp>

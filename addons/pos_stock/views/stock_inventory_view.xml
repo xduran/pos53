@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_inventory_form_inherit" model="ir.ui.view">
+            <field name="name">stock.inventory.form.inherit</field>
+            <field name="model">stock.inventory</field>
+            <field name="inherit_id" ref="stock.view_inventory_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="before">
+                    <field name="include_all_products"
+                           attrs="{'invisible': [('filter', '!=', 'none')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="categ_id"
+                           attrs="{'invisible': [('filter', '!=', 'partial')], 'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

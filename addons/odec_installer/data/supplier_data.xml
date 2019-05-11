@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Suppliers data for Restaurant. -->
+<odoo noupdate="1">
+	<record id="restaurant_sales_partner_category" model="res.partner.category">
+		<field name="name">Comprador</field>
+	</record>
+</odoo>

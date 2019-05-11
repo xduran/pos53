@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model="currency.values" id="bill_100">
+            <field name="name">Billete de 100</field>
+            <field eval="100.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_50">
+            <field name="name">Billete de 50</field>
+            <field eval="50.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_20">
+            <field name="name">Billete de 20</field>
+            <field eval="20.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_10">
+            <field name="name">Billete de 10</field>
+            <field eval="10.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_5">
+            <field name="name">Billete de 5</field>
+            <field eval="5.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_3">
+            <field name="name">Billete de 3</field>
+            <field eval="3.0" name="value"/>
+        </record>
+        <record model="currency.values" id="bill_1">
+            <field name="name">Billete de 1</field>
+            <field eval="1.0" name="value"/>
+        </record>
+        <record model="currency.values" id="coin_1">
+            <field name="name">Moneda de 1</field>
+            <field eval="1.0" name="value"/>
+        </record>
+        <record model="currency.values" id="coin_050">
+            <field name="name">Moneda de 0.5</field>
+            <field eval="0.5" name="value"/>
+        </record>
+        <record model="currency.values" id="coin_025">
+            <field name="name">Moneda de 0.25</field>
+            <field eval="0.25" name="value"/>
+        </record>
+        <record model="currency.values" id="coin_010">
+            <field name="name">Moneda de 0.10</field>
+            <field eval="0.10" name="value"/>
+        </record>
+        <record model="currency.values" id="coin_005">
+            <field name="name">Moneda de 0.05</field>
+            <field eval="0.05" name="value"/>
+        </record>
+    </data>
+</openerp>

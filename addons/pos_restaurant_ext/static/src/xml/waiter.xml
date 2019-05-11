@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="WaiterButton">
+        <div class='control-button'>
+            <i class="fa fa-edit"></i>
+            <t t-if="widget.pos.get_waiter()">
+                <t t-esc="widget.pos.get_waiter().name" />
+            </t>
+            <t t-if="!widget.pos.get_waiter()">
+                Waiter
+            </t>
+        </div>
+    </t>
+</templates>

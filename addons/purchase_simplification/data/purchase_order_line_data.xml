@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--<function name="fix_partner_ref" model="purchase.order.line"/>-->
+    </data>
+</openerp>

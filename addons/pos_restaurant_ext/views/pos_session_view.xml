@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_session_inherit_form">
+            <field name="name">pos.session.form.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="customers_count" attrs="{'invisible': [('state', '=', 'opening_control')]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_session_tree">
+            <field name="name">pos.session.tree.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="customers_count" sum="Total Customers" groups="point_of_sale.group_pos_manager"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

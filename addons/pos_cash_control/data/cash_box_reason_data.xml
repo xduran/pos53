@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model="cash.box.reason.category" id="sales_cash_flow">
+            <field name="name">Sales</field>
+            <field name="sequence" eval="1"/>
+        </record>
+        <record model="cash.box.reason.category" id="expenses_flow">
+            <field name="name">Expenses</field>
+            <field name="sequence" eval="2"/>
+        </record>
+        <record model="cash.box.reason.category" id="cash_difference_flow">
+            <field name="name">Cash Differences</field>
+            <field name="sequence" eval="3"/>
+        </record>
+        <record model="cash.box.reason" id="sales_cash_payment">
+            <field name="name">Sales in Cash</field>
+            <field name="sequence" eval="1"/>
+            <field name="cash_box_in" eval="True"/>
+            <field name="cash_box_out" eval="False"/>
+            <field name="category_id" ref="sales_cash_flow"/>
+        </record>
+        <record model="cash.box.reason" id="sales_cash_change">
+            <field name="name">Customers change</field>
+            <field name="sequence" eval="2"/>
+            <field name="cash_box_in" eval="False"/>
+            <field name="cash_box_out" eval="True"/>
+            <field name="category_id" ref="sales_cash_flow"/>
+        </record>
+        <record model="cash.box.reason" id="sales_voucher_payment">
+            <field name="name">Sales in Voucher</field>
+            <field name="sequence" eval="1"/>
+            <field name="cash_box_in" eval="True"/>
+            <field name="cash_box_out" eval="False"/>
+            <field name="category_id" ref="sales_cash_flow"/>
+        </record>
+        <record model="cash.box.reason" id="voucher_to_cash">
+            <field name="name">Voucher to cash</field>
+            <field name="sequence" eval="2"/>
+            <field name="cash_box_in" eval="False"/>
+            <field name="cash_box_out" eval="True"/>
+        </record>
+        <record model="cash.box.reason" id="sales_customers_tips">
+            <field name="name">Customers Tips</field>
+            <field name="sequence" eval="1"/>
+            <field name="cash_box_in" eval="True"/>
+            <field name="cash_box_out" eval="False"/>
+        </record>
+        <record model="cash.box.reason" id="sales_customers_discounts">
+            <field name="name">Customers Discounts</field>
+            <field name="sequence" eval="1"/>
+            <field name="cash_box_in" eval="False"/>
+            <field name="cash_box_out" eval="True"/>
+            <field name="category_id" ref="sales_cash_flow"/>
+        </record>
+        <record model="cash.box.reason" id="sales_house_discounts">
+            <field name="name">House Discounts</field>
+            <field name="sequence" eval="1"/>
+            <field name="cash_box_in" eval="False"/>
+            <field name="cash_box_out" eval="True"/>
+            <field name="category_id" ref="sales_cash_flow"/>
+        </record>
+        <record model="cash.box.reason" id="cash_difference_profit">
+            <field name="name">Balance profits</field>
+            <field name="sequence" eval="98"/>
+            <field name="cash_box_in" eval="True"/>
+            <field name="cash_box_out" eval="False"/>
+            <field name="category_id" ref="cash_difference_flow"/>
+        </record>
+        <record model="cash.box.reason" id="cash_difference_loss">
+            <field name="name">Balance losses</field>
+            <field name="sequence" eval="99"/>
+            <field name="cash_box_in" eval="False"/>
+            <field name="cash_box_out" eval="True"/>
+            <field name="category_id" ref="cash_difference_flow"/>
+        </record>
+    </data>
+</openerp>

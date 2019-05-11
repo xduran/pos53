@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem id="base.menu_purchase_root"
+            name="Purchases"
+            icon="fa-shopping-cart"
+            web_icon="purchase_ext,static/description/icon.png"/>
+    </data>
+</openerp>

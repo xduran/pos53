@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_area_tree">
+            <field name="name">pos.area.tree</field>
+            <field name="model">pos.area</field>
+            <field name="arch" type="xml">
+                <tree string="Areas" editable="bottom">
+                    <field name="sequence" widget="handler" invisible="1"/>
+                    <field name="name"/>
+                    <!--<field name="location_id"/>-->
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_pos_area">
+            <field name="name">Areas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <menuitem parent="point_of_sale.menu_point_config_product" id="menu_pos_area"
+                  action="action_pos_area" sequence="9" groups="point_of_sale.group_pos_manager"/>
+    </data>
+</openerp>

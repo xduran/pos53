@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-11 04:10+0000\n"
+"PO-Revision-Date: 2016-10-11 00:12-0500\n"
+"Last-Translator: Javier Ruiz Durán <javier.ruiz.duran@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: pos_mrp
+#: model:ir.model.fields,field_description:pos_mrp.field_product_template_used_count
+msgid "# Bill of Material"
+msgstr "Nº de listas de materiales"
+
+#. module: pos_mrp
+#: model:ir.ui.view,arch_db:pos_mrp.mrp_bom_form_view
+msgid "Assign as product cost"
+msgstr "Asignar como coste del producto"
+
+#. module: pos_mrp
+#: model:ir.model,name:pos_mrp.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Lista de materiales"
+
+#. module: pos_mrp
+#: model:ir.model.fields,field_description:pos_mrp.field_mrp_bom_cost
+#: model:ir.model.fields,field_description:pos_mrp.field_mrp_bom_line_cost
+msgid "Cost"
+msgstr "Coste"
+
+#. module: pos_mrp
+#: model:ir.model,name:pos_mrp.model_product_template
+msgid "Product Template"
+msgstr "Plantilla producto"
+
+#. module: pos_mrp
+#: code:addons/pos_mrp/models/mrp.py:44
+#, python-format
+msgid ""
+"The UoM used for %s in BoM of %s does not belong to the same category of the "
+"UoM set in the product."
+msgstr ""
+"La UdM usada para %s en la LdM de %s no pertenece a la misma categoría que "
+"la UdM establecida en el producto."
+
+#. module: pos_mrp
+#: model:ir.ui.view,arch_db:pos_mrp.product_template_form_view
+msgid "Used in"
+msgstr "Usado en"
+
+#. module: pos_mrp
+#: model:ir.model,name:pos_mrp.model_mrp_bom_line
+msgid "mrp.bom.line"
+msgstr "mrp.bom.line"

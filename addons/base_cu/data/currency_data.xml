@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="base.CUP" model="res.currency">
+            <field name="active" eval="True"/>
+        </record>
+        <record id="base.EUR" model="res.currency">
+            <field name="active" eval="False"/>
+        </record>
+        <record id="base.USD" model="res.currency">
+            <field name="active" eval="False"/>
+        </record>
+        <record id="CUC" model="res.currency">
+            <field name="name">CUC</field>
+            <field name="symbol">$</field>
+            <field name="rounding">0.01</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</openerp>

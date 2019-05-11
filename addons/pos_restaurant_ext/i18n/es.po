@@ -1,0 +1,251 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_restaurant_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-02 17:29+0000\n"
+"PO-Revision-Date: 2016-11-02 17:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_iface_change_table
+msgid "Allows to change order's table"
+msgstr "Permite mover las ordenes de una mesa para otra"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_iface_guest_count
+msgid "Allows to specify guest count"
+msgstr "Permite especificar la cantidad de comensales"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_iface_waiter
+msgid "Allows to specify the waiter that serves the table"
+msgstr "Permite especificar el mesero que atiende la mesa"
+
+#. module: pos_restaurant_ext
+#: model:pos.category,name:pos_restaurant_ext.beverage
+msgid "Beverages"
+msgstr "Bebidas"
+
+#. module: pos_restaurant_ext
+#. openerp-web
+#: code:addons/pos_restaurant_ext/static/src/xml/change_table.xml:5
+#, python-format
+msgid "Change Table"
+msgstr "Cambiar Mesa"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_iface_change_table
+msgid "Change table"
+msgstr "Cambiar mesa"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_settings_module_pos_restaurant_changes_control
+msgid "Changes Control"
+msgstr "Control de cambios"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pos_restaurant_ext
+#: model:pos.category,name:pos_restaurant_ext.food
+msgid "Foods"
+msgstr "Comidas"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_iface_guest_count
+msgid "Guest Count"
+msgstr "Conteo de comensales"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_settings_module_pos_restaurant_changes_control
+msgid "If you check this box, you will be able keep track of changes made to orders after printed."
+msgstr "Si marca esta opción, podrá ver los cambios realizados por el cajero a los pedidos después de haber impreso la cuenta."
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_settings_module_pos_restaurant_work_orders
+msgid "If you check this box, you will be able see the customers orders before they paid from a category oriented screen. This allows you to inform your work centers (i.e. Kitchen, Bar) of the customer orders and keep track of their statuses."
+msgstr "Si marca esta opción, podrá tener una vista de comanda. Esto permite informar a los centros de producción (ej: Cocina, Bar) las ordenes de los clientes y llevar el control del estado de las mismas."
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_config_settings_module_pos_garnish
+msgid "If you check this box, you will be able to use garnish for your products."
+msgstr "Si marca esta opción, podrá especificar guarniciones para sus productos ."
+
+#. module: pos_restaurant_ext
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_sale_config_settings_form_pos_inherit
+msgid "Keep track of order changes"
+msgstr "Llevar el control de los cambios en las ordenes"
+
+#. module: pos_restaurant_ext
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_sale_config_settings_form_pos_inherit
+msgid "Keep track of work orders"
+msgstr "Llevar el control de las ordenes de trabajo"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Líneas del Terminal Punto de Venta"
+
+#. module: pos_restaurant_ext
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_sale_config_settings_form_pos_inherit
+msgid "Manage products garnishes"
+msgstr "Administrar guarniciones de productos"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_waiter_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_order_line_note
+msgid "Note"
+msgstr "Nota"
+
+#. module: pos_restaurant_ext
+#: model:pos.category,name:pos_restaurant_ext.other
+msgid "Others"
+msgstr "Otros"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_order
+msgid "Point of Sale"
+msgstr "Terminal punto de venta"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_report_pos_order
+msgid "Point of Sale Orders Statistics"
+msgstr "Punto de venta. Estadísticas pedidos"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_settings_module_pos_garnish
+msgid "Product Garnish"
+msgstr "Guarniciones"
+
+#. module: pos_restaurant_ext
+#. openerp-web
+#: code:addons/pos_restaurant_ext/static/src/js/pos_restaurant_ext.js:84
+#, python-format
+msgid "Select Waiter"
+msgstr "Seleccione Mesero"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_report_pos_order_table_id
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_pos_order_filter_inherit
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_report_pos_order_search_inherit
+msgid "Table"
+msgstr "Mesa"
+
+#. module: pos_restaurant_ext
+#. openerp-web
+#: code:addons/pos_restaurant_ext/static/src/xml/posticket_ext.xml:6
+#, python-format
+msgid "Table:"
+msgstr "Mesa:"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,help:pos_restaurant_ext.field_pos_session_customers_count
+msgid "The total number of customers."
+msgstr "El número total de clientes atendidos."
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_session_customers_count
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_pos_order_tree_inherit
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_pos_session_tree
+msgid "Total Customers"
+msgstr "Total de clientes"
+
+#. module: pos_restaurant_ext
+#. openerp-web
+#: code:addons/pos_restaurant_ext/static/src/xml/waiter.xml:9
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_iface_waiter
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_order_waiter_id
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_report_pos_order_waiter_id
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_pos_order_filter_inherit
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_pos_waiter_tree
+#: model:ir.ui.view,arch_db:pos_restaurant_ext.view_report_pos_order_search_inherit
+#, python-format
+msgid "Waiter"
+msgstr "Mesero"
+
+#. module: pos_restaurant_ext
+#: model:ir.actions.act_window,name:pos_restaurant_ext.action_pos_waiter
+#: model:ir.ui.menu,name:pos_restaurant_ext.menu_pos_waiter
+msgid "Waiters"
+msgstr "Meseros"
+
+#. module: pos_restaurant_ext
+#: model:ir.model.fields,field_description:pos_restaurant_ext.field_pos_config_settings_module_pos_restaurant_work_orders
+msgid "Work Center"
+msgstr "Centro de producción"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_config
+msgid "pos.config"
+msgstr "Configuración del TPV"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_config_settings
+msgid "pos.config.settings"
+msgstr "pos.config.settings"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_session
+msgid "pos.session"
+msgstr "Sesión TPV"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_pos_waiter
+msgid "pos.waiter"
+msgstr "pos.waiter"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_restaurant_floor
+msgid "restaurant.floor"
+msgstr "restaurant.floor"
+
+#. module: pos_restaurant_ext
+#: model:ir.model,name:pos_restaurant_ext.model_restaurant_table
+msgid "restaurant.table"
+msgstr "restaurant.table"
+

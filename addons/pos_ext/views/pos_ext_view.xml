@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem id="point_of_sale.menu_point_root"
+            name="Point of Sale"
+            icon="fa-usd"
+            web_icon="pos_ext,static/src/img/dollar.png"/>
+    </data>
+</openerp>

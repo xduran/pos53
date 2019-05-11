@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_order_inherit10_form">
+            <field name="name">pos.order.form.view.inherit10</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="pos_restaurant.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='customer_count']" position="after">
+                    <field name="waiter_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_pos_order_filter_inherit" model="ir.ui.view">
+            <field name="name">pos.order.list.select</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="table_id"/>
+                    <field name="waiter_id"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Waiter" domain="[]" context="{'group_by':'waiter_id'}"/>
+                    <filter string="Table" domain="[]" context="{'group_by':'table_id'}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_order_tree_inherit">
+            <field name="name">Orders Inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="table_id"/>
+                    <field name="waiter_id"/>
+                    <field name="customer_count" sum="Total Customers"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

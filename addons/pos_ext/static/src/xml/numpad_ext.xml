@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="NumpadWidget">
+        <t t-jquery=".numpad" t-operation="replace">
+            <div class="numpad">
+                <button class="input-button number-char numpad1">1</button>
+                <button class="input-button number-char numpad2">2</button>
+                <button class="input-button number-char numpad3">3</button>
+                <button class="mode-button numpad-qty" data-mode='quantity'>Qty</button>
+                <br />
+                <button class="input-button number-char numpad4">4</button>
+                <button class="input-button number-char numpad5">5</button>
+                <button class="input-button number-char numpad6">6</button>
+                <t t-if="widget.pos.config.iface_change_price" >
+                    <button class="mode-button numpad-price" data-mode='price'>Price</button>
+                </t>
+                <t t-if="!widget.pos.config.iface_change_price" >
+                    <button class=""></button>
+                </t>
+                <br />
+                <button class="input-button number-char numpad7">7</button>
+                <button class="input-button number-char numpad8">8</button>
+                <button class="input-button number-char numpad9">9</button>
+                <t t-if="widget.pos.config.iface_change_discount" >
+                    <button class="mode-button numpad-disc" data-mode='discount'>Disc</button>
+                </t>
+                <t t-if="!widget.pos.config.iface_change_discount" >
+                    <button class=""></button>
+                </t>
+                <br />
+                <t t-if="widget.pos.config.iface_change_sing" >
+                    <button class="input-button numpad-minus">+/-</button>
+                </t>
+                <t t-if="!widget.pos.config.iface_change_sing" >
+                    <button class="input-button"></button>
+                </t>
+                <button class="input-button number-char numpad0">0</button>
+                <button class="input-button number-char numpad-point">.</button>
+                <button class="input-button numpad-backspace">
+                    <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
+                </button>
+                <br />
+            </div>
+        </t>
+    </t>
+</templates>

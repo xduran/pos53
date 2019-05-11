@@ -1,0 +1,284 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_garnish
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-06 15:41+0000\n"
+"PO-Revision-Date: 2017-11-06 10:46-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:56
+#, python-format
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_to_garnish
+msgid "Allow garnish"
+msgstr "Permite guarniciones"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_pos_config_iface_garnish
+msgid "Allows to specify product's garnish"
+msgstr "Permite especificar las guarniciones posibles del producto"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_to_garnish
+msgid "Allows to specify product's garnish. Very common in restaurants main dishes."
+msgstr "Permite especificar las guarniciones posibles del producto. Muy común en los platos principales de los restaurantes."
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:52
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_create_uid
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_create_date
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_display_name
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_price_extra
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_price_extra
+msgid "Extra Price"
+msgstr "Precio extra"
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:55
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:111
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_config_iface_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_garnish_id
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_text
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_garnish_id
+#: model:ir.ui.view,arch_db:pos_garnish.product_template_form_view
+#: model:ir.ui.view,arch_db:pos_garnish.view_pos_order_form
+#, python-format
+msgid "Garnish"
+msgstr "Guarnición"
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:76
+#, python-format
+msgid "Garnish available for this product:"
+msgstr "Guarniciones disponibles para este producto:"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_garnish_of_ids
+#: model:ir.ui.view,arch_db:pos_garnish.product_template_form_view
+msgid "Garnish of"
+msgstr "Guarnición de"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_id
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_image
+msgid "Image"
+msgstr "Imagen"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_stand_alone
+msgid "Indicates that the product can be sold independently, regardless if it is a garnish."
+msgstr "Indica que el producto puede ser vendido individualmente a pesar de ser una guarnición."
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_category_is_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_is_garnish
+msgid "Is garnish"
+msgstr "Es guarnición"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish___last_update
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_write_uid
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_write_date
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_garnish_order_line_id
+msgid "Line"
+msgstr "Línea"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Líneas del Terminal Punto de Venta"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_allowed_garnish
+msgid "Maximum number of allowed garnish to serve with each unit of the product."
+msgstr "Número máximo de guarniciones a servir con este producto."
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_image_medium
+msgid "Medium-sized image"
+msgstr "Imagen mediana"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_garnish_image_medium
+msgid "Medium-sized image of the product. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Imagen mediana del producto. Se redimensionará automáticamente a 128x128p px, preservando el ratio de aspecto, sólo cuando la imagen exceda uno de esos tamaños. Este campo se usa en las vistas de formulario y en algunas vistas kanban."
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_allowed_garnish
+msgid "Number of garnish"
+msgstr "Número de guarniciones"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_order_separated
+msgid "Order separated"
+msgstr "Ordenar por separado"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_pos_order
+msgid "Point of Sale"
+msgstr "Terminal punto de venta"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_order_separated
+msgid "Print the garnishes as individual orders."
+msgstr "Imprimir las guarniciones como ordenes individuales"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_product_template
+msgid "Product Template"
+msgstr "Plantilla producto"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_pos_order_line_product_garnish_ids
+#: model:ir.ui.view,arch_db:pos_garnish.product_garnish_tree_view
+#: model:ir.ui.view,arch_db:pos_garnish.product_template_form_view
+msgid "Product garnish"
+msgstr "Guarnición de producto"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_garnish_of_ids
+msgid "Products that can be serve with this one as a garnish."
+msgstr "Productos que pueden ser servidos como guarnición de este."
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_pos_category
+msgid "Public Category"
+msgstr "Categoría pública"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_pos_order_line_product_garnish_ids
+msgid "Selected garnish for the product."
+msgstr "Guarniciones seleccionadas para este producto."
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_garnish_image_small
+msgid "Small-sized image"
+msgstr "Imagen pequeña"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_garnish_image_small
+msgid "Small-sized image of the product. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Imagen pequeña del producto. Se redimensiona automáticamente a 64x64 px, preservando el ratio de aspecto. Use este campo siempre que se requiera una imagen pequeña."
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_stand_alone
+msgid "Stand Alone"
+msgstr "Independiente"
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:65
+#, python-format
+msgid "The product will be serve with:"
+msgstr "El producto será servido con:"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_garnish_image
+msgid "This field holds the image used as image for the product, limited to 1024x1024px."
+msgstr "Este campo contiene la imagen usada para el producto, limitada a 1024x1024 px."
+
+#. module: pos_garnish
+#: model:ir.ui.view,arch_db:pos_garnish.product_template_form_view
+msgid "Valid Garnish"
+msgstr "Guarniciones válidas"
+
+#. module: pos_garnish
+#: model:ir.model.fields,field_description:pos_garnish.field_product_template_valid_garnish_ids
+msgid "Valid garnish"
+msgstr "Guarniciones válidas"
+
+#. module: pos_garnish
+#: model:ir.model.fields,help:pos_garnish.field_product_template_valid_garnish_ids
+msgid "When you sell this product, you will be ask to chose the garnish of the product among this options."
+msgstr "Al vender este producto podrá escoger las guarniciones del mismo entre estas opciones."
+
+#. module: pos_garnish
+#. openerp-web
+#: code:addons/pos_garnish/static/src/xml/garnish.xml:102
+#, python-format
+msgid "garnish to be defined"
+msgstr "guarniciones por definir"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_pos_config
+msgid "pos.config"
+msgstr "Configuración del TPV"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_pos_order_line_garnish
+msgid "pos.order.line.garnish"
+msgstr "pos.order.line.garnish"
+
+#. module: pos_garnish
+#: model:ir.model,name:pos_garnish.model_product_garnish
+msgid "product.garnish"
+msgstr "product.garnish"

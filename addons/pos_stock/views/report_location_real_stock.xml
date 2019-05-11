@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_location_real_stock">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h2 t-esc="company.name"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div><strong>Location: </strong><span t-field="o.location_id.name"/></div>
+                            <div><strong>Date: </strong><span t-field="o.date"/></div>
+                            <div><strong>Previous Date: </strong><span t-field="o.previous_date"/></div>
+                        </div>
+                        <div>
+
+
+                        </div>
+                        <div t-foreach="lines()" t-as="cat">
+                            <div class="row">
+                                <h3 t-esc="cat[0]"/>
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th width="35%">Product</th>
+                                            <th>UoM</th>
+                                            <th>Start</th>
+                                            <th>In</th>
+                                            <th>Out</th>
+                                            <th>End</th>
+                                            <th width="20%">Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="cat[1]" t-as="l">
+                                            <td>
+                                                <span t-esc="l[0]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l[1]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l[2]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l[3]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l[4]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l[5]"/>
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

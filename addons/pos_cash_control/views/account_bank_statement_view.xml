@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <record id="view_cash_box_operation_search" model="ir.ui.view">
+            <field name="name">cash.box.operation.search</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Cash Box Operations">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="pos_session_id"/>
+                    <filter string="Income" name="income" domain="[('amount', '&gt;', 0)]"/>
+                    <filter string="Outcome" name="outcome" domain="[('amount', '&lt;', 0)]"/>
+                    <separator/>
+                    <filter string="Today" name="today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Yesterday" name="yesterday" domain="[('date', '=', (context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]" />
+                    <group expand="0" string="Group By">
+                        <filter string="Reason Category" name="group_category" domain="[]" context="{'group_by':'reason_category_id'}"/>
+                        <filter string="Reason" name="group_reason" domain="[]" context="{'group_by':'reason_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="view_cash_box_operation_form" model="ir.ui.view">
+            <field name="name">cash.box.operation.form</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="priority">8</field>
+            <field name="arch" type="xml">
+            <form string="Cash Box Operation" create="false">
+                <sheet string="Cash Box Operation">
+                    <group col="4">
+                        <field name="reason_category_id" readonly="1"/>
+                        <field name="date" readonly="1"/>
+                        <field name="reason_id"/>
+                        <field name="amount" readonly="1"/>
+                        <field name="name" string="Original reason" readonly="1"/>
+                        <field name="journal_currency_id" invisible="1"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+        <record id="view_cash_box_operation_tree" model="ir.ui.view">
+            <field name="name">cash.box.operation.tree</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="priority">8</field>
+            <field name="arch" type="xml">
+                <tree string="Cash Box Operations" create="false"
+                    decoration-danger="create_date &lt;&gt; write_date">
+                    <field name="sequence" readonly="1" invisible="1"/>
+                    <field name="journal_id" invisible="1" />
+                    <field name="reason_category_id" invisible="1"/>
+                    <field name="reason_id"/>
+                    <field name="amount" sum="Total"/>
+                    <field name="date"  invisible="1"/>
+                    <field name="journal_currency_id" invisible="1"/>
+                    <field name="create_date"/>
+                    <field name="write_date" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cash_box_operation" model="ir.actions.act_window">
+            <field name="name">Cash Box Operations</field>
+            <field name="res_model">account.bank.statement.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('pos_session_id', '!=', False), ('journal_id.type', '=', 'cash')]</field>
+            <field name="context">{'search_default_group_category': 1, 'search_default_group_reason': 1}</field>
+            <field name="search_view_id" ref="view_cash_box_operation_search"/>
+            <field name="help" type="html">
+              <p>
+                A cash box operation is an income or outcome registered during a pos session.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_cash_box_operation_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_cash_box_operation_tree"/>
+            <field name="act_window_id" ref="action_cash_box_operation"/>
+        </record>
+
+        <record id="action_cash_box_operation_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cash_box_operation_form"/>
+            <field name="act_window_id" ref="action_cash_box_operation"/>
+        </record>
+
+        <menuitem parent="point_of_sale.menu_point_of_sale" id="menu_cash_box_operations" name="Cash Box Operations"
+                  sequence="20" groups="point_of_sale.group_pos_manager"  action="action_cash_box_operation"/>
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_order_form_inherit">
+            <field name="name">pos.order.form.view.inherit5</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lines']/form/group" position="inside">
+                    <field name="note"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

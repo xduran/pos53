@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="point_of_sale.pos_config_main" model="pos.config">
+        <field name="iface_display_taxes" eval="False"/>
+        <field name="iface_invoicing" eval="True"/>
+        <field name="iface_global_discount" eval="True"/>
+        <field name="iface_service_charge" eval="False"/>
+        <field name="iface_allow_tip" eval="True"/>
+        <field name="tip_product_id" ref="restaurant_product_tip"/>
+        <field name="discount_product_id" ref="restaurant_product_discount"/>
+        <field name="iface_print_auto" eval="False"/>
+        <field name="cash_control" eval="True"/>
+        <field name="iface_splitbill" eval="True"/>
+    </record>
+</odoo>

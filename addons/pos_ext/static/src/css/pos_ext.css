@@ -1,0 +1,12 @@
+.hidden {
+    display: none;
+}
+
+.pos .pos-order-note {
+    width: 90%;
+
+	box-sizing: border-box;
+	margin: 0px 17px;
+	font-size: 16px;
+	resize: none;
+}

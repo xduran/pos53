@@ -1,0 +1,230 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_cu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-12 16:35+0000\n"
+"PO-Revision-Date: 2016-09-12 12:37-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: base_cu
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "City"
+msgstr "Ciudad"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_code
+msgid "Code"
+msgstr "Código"
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: base_cu
+#: model:ir.actions.act_window,name:base_cu.action_country_state_county
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_ids
+#: model:ir.ui.menu,name:base_cu.menu_country_state_county_partner
+#: model:ir.ui.menu,name:base_cu.menu_country_state_county_partner_config
+msgid "Counties"
+msgstr "Municipios"
+
+#. module: base_cu
+#: model:ir.ui.menu,name:base_cu.menu_country_config
+msgid "Countries"
+msgstr "Países"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_country_id
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_filter
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_filter
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "Country"
+msgstr "País"
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_company_county_id
+#: model:ir.model.fields,field_description:base_cu.field_res_partner_county_id
+#: model:ir.model.fields,field_description:base_cu.field_res_users_county_id
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_filter
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_form
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_tree
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "County"
+msgstr "Municipio"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: base_cu
+#: model:ir.ui.menu,name:base_cu.menu_country_state_config
+msgid "Fed. States"
+msgstr "Provincia"
+
+#. module: base_cu
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_filter
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_filter
+msgid "Group by..."
+msgstr "Agrupar por..."
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_lang
+msgid "Languages"
+msgstr "Idiomas"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: base_cu
+#: model:ir.ui.menu,name:base_cu.menu_localities_config
+msgid "Localization"
+msgstr "Localizacion"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: base_cu
+#: model:ir.model.fields,field_description:base_cu.field_res_country_state_county_state_id
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_filter
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "Province"
+msgstr "Provincia"
+
+#. module: base_cu
+#: model:ir.ui.view,arch_db:base_cu.view_country_state_county_filter
+msgid "State"
+msgstr "Estado"
+
+#. module: base_cu
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "Street..."
+msgstr "Calle... #"
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: base_cu
+#: model:ir.ui.view,arch_db:base_cu.view_company_form_inherit
+#: model:ir.ui.view,arch_db:base_cu.view_partner_form_inherit
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: base_cu
+#: model:ir.model,name:base_cu.model_res_country_state_county
+msgid "res.country.state.county"
+msgstr "res.country.state.county"
+
+
+
+
+
+#. module: base
+#: code:addons/base/res/res_partner.py:52
+#: model:ir.model.fields,field_description:base.field_res_partner_state_id
+#: model:ir.model.fields,field_description:base.field_res_users_state_id
+#: model:ir.ui.view,arch_db:base.view_company_form
+#: model:ir.ui.view,arch_db:base.view_country_state_form
+#: model:ir.ui.view,arch_db:base.view_country_state_tree
+#: model:ir.ui.view,arch_db:base.view_partner_address_form
+#: model:ir.ui.view,arch_db:base.view_partner_form
+#: model:ir.ui.view,arch_db:base.view_res_bank_form
+#, python-format
+msgid "State"
+msgstr "Provincia"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_country_state_code
+msgid "State Code"
+msgstr "Código de Provincia"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_country_state_name
+msgid "State Name"
+msgstr "Nombre de Provincia"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_country_state_ids
+msgid "States"
+msgstr "Provincias"
+
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_bank_street
+#: model:ir.model.fields,field_description:base.field_res_company_street
+#: model:ir.model.fields,field_description:base.field_res_partner_street
+#: model:ir.model.fields,field_description:base.field_res_users_street
+msgid "Street"
+msgstr "Calle"
+
+#. module: base
+#: model:ir.ui.view,arch_db:base.view_company_form
+#: model:ir.ui.view,arch_db:base.view_partner_address_form
+#: model:ir.ui.view,arch_db:base.view_partner_form
+#: model:ir.ui.view,arch_db:base.view_res_bank_form
+msgid "Street..."
+msgstr "Calle... #"
+
+#. module: base
+#: model:ir.ui.view,arch_db:base.view_company_form
+#: model:ir.ui.view,arch_db:base.view_partner_address_form
+#: model:ir.ui.view,arch_db:base.view_partner_form
+msgid "Street 2..."
+msgstr "Entrecalles..."

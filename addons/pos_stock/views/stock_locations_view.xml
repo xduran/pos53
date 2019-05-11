@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_location_form_inherit" model="ir.ui.view">
+            <field name="name">stock.location.form.inherit</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='usage']" position="after">
+                    <field name="picking_in_type_default" />
+                    <field name="picking_scrap_type_default" />
+                    <field name="picking_expense_type_default" />
+                    <field name="picking_cost_type_default" />
+                </xpath>
+                <xpath expr="//field[@name='scrap_location']" position="before">
+                    <field name="production_location" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_stock_quant_filtered" model="ir.actions.act_window">
+            <field name="name">Quants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.quant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{
+                'search_default_location_id': [active_id],
+                'default_location_id': active_id,
+                'group_by': ['product_id']
+                }
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_stock_quant_tree">
+            <field name="name">stock.quant.tree</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='inventory_value']" position="attributes">
+                    <attribute name="sum">Total Value</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_location_tree2" model="ir.ui.view">
+            <field name="name">stock.location.tree</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_tree2"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='complete_name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_inventory_form" model="ir.actions.act_window">
+            <field name="name">Inventory Adjustments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="stock.view_inventory_form"/>
+            <field name="context">{
+                'search_default_location_id': [active_id],
+                'default_location_id': active_id
+                }
+            </field>
+        </record>
+
+        <record id="action_product_processing_form" model="ir.actions.act_window">
+            <field name="name">Product Processing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.processing</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="pos_stock.view_product_processing_form"/>
+            <field name="context">{
+                'search_default_location_src_id': [active_id],
+                'search_default_location_dest_id': [active_id],
+                'default_location_src_id': active_id,
+                'default_location_dest_id': active_id,
+                }
+            </field>
+        </record>
+
+        <record id="action_picking_form" model="ir.actions.act_window">
+            <field name="name">New Transfer</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <record id="action_mrp_production" model="ir.actions.act_window">
+            <field name="name">New Production Order</field>
+            <field name="res_model">mrp.production</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <record id="stock_location_kanban_view" model="ir.ui.view">
+            <field name="name">stock.location.kanban.view</field>
+            <field name="model">stock.location</field>
+            <field name="arch" type="xml">
+                <kanban create="false" class="o_kanban_dashboard o_pos_kanban">
+                    <field name="name"/>
+                    <field name="currency_id"/>
+                    <field name="picking_in_type_default"/>
+                    <field name="picking_scrap_type_default"/>
+                    <field name="picking_expense_type_default" />
+                    <field name="picking_cost_type_default" />
+                    <field name="production_location" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary"><t t-esc="record.name.value"/></div>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section" groups="stock.group_stock_manager">
+                                        <a class="o_kanban_manage_toggle_button" href="#">More <i class="fa fa-caret-down"/></a>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content o_visible">
+                                    <div class="row">
+                                        <div class="col-xs-10 o_kanban_primary_left">
+                                            <button class="btn btn-primary" name="print_real_stock" type="object">
+                                                <span>IPV</span>
+                                            </button>
+                                            <button t-if="record.picking_in_type_default.value" class="btn"
+                                                    name="get_action_transfer_products" type="object">
+                                                <span>Receive</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div><div class="container o_kanban_card_manage_pane o_invisible">
+                                    <div class="row">
+                                        <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>Action</span>
+                                            </div>
+                                            <div>
+                                                <a name="%(action_inventory_form)d" type="action">Adjust</a>
+                                            </div>
+                                            <div t-if="record.picking_scrap_type_default.value">
+                                                <a name="get_action_scrap_products" type="object">Scrap</a>
+                                            </div>
+                                            <div t-if="record.picking_expense_type_default.value">
+                                                <a name="get_action_expense_products" type="object">Transfer to Expenses</a>
+                                            </div>
+                                            <div t-if="record.picking_cost_type_default.value">
+                                                <a name="get_action_cost_products" type="object">Transfer to Costs</a>
+                                            </div>
+                                            <div t-if="record.production_location.value">
+                                                <a name="get_action_manufacture" type="object">Manufacture</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_new">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>Reports</span>
+                                            </div>
+                                            <div>
+                                                <a name="%(action_stock_quant_filtered)d" type="action">Inventory Value</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="inventory_action" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.location</field>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" eval="stock_location_kanban_view"/>
+            <field name="domain">[('usage','=', 'internal')]</field>
+
+        </record>
+
+        <menuitem id="stock_moves_menu" parent="stock.menu_stock_inventory_control"
+                  action="stock.stock_picking_type_action" sequence="2" name="Stock Moves"/>
+        <menuitem id="stock.stock_picking_type_menu"
+                  action="inventory_action" parent="stock.menu_stock_root" sequence="0" name="Dashboard"/>
+
+
+
+        <record id="paperformat_location_real_stock" model="report.paperformat">
+            <field name="name">Location Real Stock Ticket</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">1000</field>
+            <field name="page_width">58</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">3</field>
+            <field name="margin_bottom">3</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">3</field>
+            <field name="dpi">130</field>
+        </record>
+
+        <report
+            id="action_report_location_real_stock"
+            string="IPV"
+            model="stock.ipv"
+            groups="stock.group_stock_manager"
+            report_type="qweb-html"
+            name="pos_stock.report_location_real_stock"
+            file="pos_stock.report_location_real_stock"
+            paperformat="pos_stock.paperformat_location_real_stock"
+        />
+    </data>
+</openerp>

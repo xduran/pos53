@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit3</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='iface_tax_included']" position="before">
+                    <field name="iface_display_taxes" />
+                </xpath>
+                <xpath expr="//field[@name='tip_product_id']" position="replace">
+
+                </xpath>
+                <xpath expr="//group[@name='features']" position="after">
+                    <group name="discounts_and_fees" string="Discounts and Fees" >
+                        <field name="iface_allow_tip" />
+                        <field name="tip_product_id"
+                               attrs="{'invisible': [('iface_allow_tip', '=', False)],
+                                       'required': [('iface_allow_tip', '!=', False)]}"
+                        />
+                        <field name="iface_global_discount" />
+                        <field name="discount_product_id"
+                               attrs="{'invisible': [('iface_global_discount', '=', False)],
+                                       'required': [('iface_global_discount', '!=', False)]}"
+                        />
+                        <field name="iface_service_fee" />
+                        <field name="service_pc" attrs="{'invisible': [('iface_service_fee', '=', False)],}"/>
+                        <field name="service_product_id"
+                               attrs="{'invisible': [('iface_service_fee', '=', False)],
+                                       'required': [('iface_service_fee', '!=', False)]}"
+                        />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_order_form">
+            <field name="name">pos.order.form.view.inherit3</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pos_reference']" position="after">
+                    <field name="discount_pc"/>
+                    <field name="service_pc"/>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='discount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='tax_ids_after_fiscal_position']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal_incl']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal_incl']" position="after">
+                    <field name="base_price"/>
+                </xpath>
+                <xpath expr="//field[@name='amount_tax']" position="before">
+                    <field name="iface_allow_tip" invisible="1"/>
+                    <field name="iface_global_discount" invisible="1"/>
+                    <field name="iface_service_fee" invisible="1"/>
+
+                    <field name="subtotal" widget="monetary"/>
+                    <field name="total_discount" widget="monetary"
+                           attrs="{'invisible': [('iface_global_discount', '=', False)]}"/>
+                    <field name="total_sale" widget="monetary" class="oe_subtotal_footer_separator"/>
+                    <field name="service_fee" widget="monetary"
+                           attrs="{'invisible': [('iface_service_fee', '=', False)]}"/>
+                    <field name="tip" widget="monetary"
+                           attrs="{'invisible': [('iface_allow_tip', '=', False)]}"/>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_order_tree_inherit">
+            <field name="name">Orders Inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='invoice_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='session_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="before">
+                    <field name="subtotal" sum="Subtotal" widget="monetary"/>
+                    <field name="total_discount" sum="Total Discount" widget="monetary"/>
+                    <field name="total_sale" sum="Net Sale" widget="monetary"/>
+                    <field name="service_fee" sum="Total Service" widget="monetary"/>
+                    <field name="tip" sum="Total Tip" widget="monetary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_session_tree">
+            <field name="name">pos.session.tree.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stop_at']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="bank_sale" sum="Bank Sale" widget="monetary" groups="point_of_sale.group_pos_manager"/>
+                    <field name="cash_sale" sum="Cash Sale" widget="monetary" groups="point_of_sale.group_pos_manager"/>
+                    <field name="total_sale" sum="Net Sale" widget="monetary" groups="point_of_sale.group_pos_manager"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_session_inherit_form">
+            <field name="name">pos.session.form.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='config_id']" position="after">
+                    <field name="bank_sale" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': [('state', '!=', 'closed')]}"/>
+                    <field name="cash_sale" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': [('state', '!=', 'closed')]}"/>
+                    <field name="total_sale" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': [('state', '=', 'opening_control')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="iface_allow_tip" invisible="1"/>
+                    <field name="iface_global_discount" invisible="1"/>
+                    <field name="iface_service_fee" invisible="1"/>
+                    <field name="total_discount" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': ['|',('state', '=', 'opening_control'),('iface_global_discount', '=', False)]}"/>
+                    <field name="service_fee" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': ['|',('state', '=', 'opening_control'),('iface_service_fee', '=', False)]}"/>
+                    <field name="tip" widget="monetary" groups="point_of_sale.group_pos_manager"
+                           attrs="{'invisible': ['|',('state', '=', 'opening_control'),('iface_allow_tip', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_pos_config_kanban" model="ir.ui.view">
+            <field name="name">pos.config.kanban.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="total_sale"/>
+                    <field name="total_discount"/>
+                    <field name="service_fee"/>
+                    <field name="tip"/>
+                    <field name="iface_allow_tip"/>
+                    <field name="iface_global_discount"/>
+                    <field name="iface_service_fee"/>
+                </xpath>
+                <xpath expr="//div[contains(@class, 'o_kanban_primary_right')]" position="inside">
+                    <div t-if="record.active_session.raw_value" class="row">
+                        <div class="col-xs-6">
+                            <span>Net Sales</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span><t t-esc="record.total_sale.value" widget="monetary"/></span>
+                        </div>
+                    </div>
+                    <div t-if="record.active_session.raw_value and record.iface_global_discount.value" class="row">
+                        <div class="col-xs-6">
+                            <span>Discounts</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span><t t-esc="record.total_discount.value" widget="monetary"/></span>
+                        </div>
+                    </div>
+                    <div t-if="record.active_session.raw_value and record.iface_service_fee.value" class="row">
+                        <div class="col-xs-6">
+                            <span>Service Fees</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span><t t-esc="record.service_fee.value" widget="monetary"/></span>
+                        </div>
+                    </div>
+                    <div t-if="record.active_session.raw_value and record.iface_allow_tip.value" class="row">
+                        <div class="col-xs-6">
+                            <span>Tips</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span><t t-esc="record.tip.value" widget="monetary"/></span>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='sale']/field[@name='customer']" position="after">
+                    <field name="pos_discount"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_config_settings_form_pos_inherit" model="ir.ui.view">
+            <field name="name">pos.config.settings.form.inherit</field>
+            <field name="model">pos.config.settings</field>
+            <field name="inherit_id" ref="point_of_sale.view_sale_config_settings_form_pos" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='module_pos_mercury']" position="replace"></xpath>
+                <xpath expr="//form/group/div" position="replace"></xpath>
+                <xpath expr="//label[@for='module_pos_loyalty']" position="replace">
+                    <label for="module_pos_garnish"/>
+                    <div>
+                          <div>
+                              <field name="module_pos_garnish"/>
+                              <label for="module_pos_garnish" string="Manage products garnishes"/>
+                          </div>
+                    </div>
+                    <label for="module_pos_restaurant_changes_control"/>
+                    <div>
+                          <div>
+                              <field name="module_pos_restaurant_changes_control"/>
+                              <label for="module_pos_restaurant_changes_control" string="Keep track of order changes"/>
+                          </div>
+                    </div>
+                    <label for="module_pos_restaurant_work_orders"/>
+                    <div>
+                          <div>
+                              <field name="module_pos_restaurant_work_orders"/>
+                              <label for="module_pos_restaurant_work_orders" string="Keep track of work orders"/>
+                          </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="account.account.type" id="data_account_type_tax_expenses">
+            <field name="name">Taxes and Contributions</field>
+            <field name="type">other</field>
+        </record>
+
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="code">998</field>
+            <field name="name">Transferencias de liquidés</field>
+            <field name="reconcile" eval='True'/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+        </record>
+
+        <record id="configurable_chart_template" model="account.chart.template">
+            <field name="name">Configurable Account Chart Template</field>
+            <field name="code_digits">3</field>
+            <field name="bank_account_code_prefix">10</field>
+            <field name="cash_account_code_prefix">10</field>
+            <field name="transfer_account_id" ref="transfer_account_id"/>
+            <field name="currency_id" ref="base.CUP"/>
+        </record>
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="chart_template_id" ref="configurable_chart_template"/>
+        </record>
+
+        <!-- Account Templates-->
+
+        <!-- 10 Activos-->
+            <!-- 10.1 Activos Circulantes-->
+                <!--<record id="conf_cash" model="account.account.template">-->
+                    <!--<field name="code">100</field>-->
+                    <!--<field name="name">Efectivo en caja</field>-->
+                    <!--<field name="user_type_id" ref="account.data_account_type_liquidity"/>-->
+                    <!--<field name="chart_template_id" ref="configurable_chart_template"/>-->
+                <!--</record>-->
+
+                <!--<record id="conf_bnk" model="account.account.template">-->
+                    <!--<field name="code">110</field>-->
+                    <!--<field name="name">Efectivo en banco</field>-->
+                    <!--<field name="user_type_id" ref="account.data_account_type_liquidity"/>-->
+                    <!--<field name="chart_template_id" ref="configurable_chart_template"/>-->
+                <!--</record>-->
+
+                <record id="conf_a_recv" model="account.account.template">
+                    <field name="code">120</field>
+                    <field name="name">Cuentas por cobrar</field>
+                    <field eval="True" name="reconcile"/>
+                    <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /10.1 Activos Circulantes-->
+
+            <!-- 10.2 Activos Fijos-->
+                <record id="conf_xfa" model="account.account.template">
+                    <field name="code">200</field>
+                    <field name="name">Activos fijos tangibles</field>
+                    <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /10.2 Activos Fijos-->
+
+            <!-- 10.3 Cuenta reguladora de activos-->
+                <record id="conf_aft_dep" model="account.account.template">
+                    <field name="code">300</field>
+                    <field name="name">Depreciación acumulada de AFT</field>
+                    <!-- TODO review the account type of this account-->
+                    <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /10.3 Cuenta reguladora de activos-->
+
+        <!-- /10 Activos-->
+
+        <!-- 20 Pasivos-->
+            <!-- 20.1 Pasivos circulantes-->
+                <record id="conf_a_pay" model="account.account.template">
+                    <field name="code">400</field>
+                    <field name="name">Cuentas por pagar</field>
+                    <field eval="True" name="reconcile"/>
+                    <field name="user_type_id" ref="account.data_account_type_payable"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+
+                <record id="conf_bnk_deb" model="account.account.template">
+                    <field name="code">470</field>
+                    <field name="name">Préstamos bancarios a corto plazo</field>
+                    <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /20.1 Pasivos circulantes-->
+
+            <!-- 20.2 Pasivos a largo plazo-->
+                <record id="conf_bnk_ldeb" model="account.account.template">
+                    <field name="code">520</field>
+                    <field name="name">Préstamos bancarios a largo plazo</field>
+                    <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /20.2 Pasivos a largo plazo-->
+        <!-- /20 Pasivos-->
+
+        <!-- 30 Patrimonio-->
+            <!-- 600 Patrimonio del TCP-->
+                <record id="conf_a_intial" model="account.account.template">
+                    <field name="code">600.10</field>
+                    <field name="name">Saldo al inicio del ejercicio</field>
+                    <field name="user_type_id" ref="account.data_account_type_equity"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+                <record id="conf_a_increments" model="account.account.template">
+                    <field name="code">600.20</field>
+                    <field name="name">Incrementos de aportes al TCP en el ejercicio</field>
+                    <field name="user_type_id" ref="account.data_account_type_equity"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+                <record id="conf_a_extractions" model="account.account.template">
+                    <field name="code">600.30</field>
+                    <field name="name">Erogaciones efectuadas por el TCP en el ejercicio</field>
+                    <field name="user_type_id" ref="account.data_account_type_equity"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+                <record id="conf_a_payed_tax" model="account.account.template">
+                    <field name="code">600.40</field>
+                    <field name="name">Pago de impuestos sobre ingresos personales</field>
+                    <field name="user_type_id" ref="account.data_account_type_equity"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /600 Patrimonio del TCP-->
+
+            <record id="conf_a_profits" model="account.account.template">
+                <field name="code">610</field>
+                <field name="name">Utilidad retenida</field>
+                <field name="user_type_id" ref="account.data_account_type_equity"/>
+                <field name="chart_template_id" ref="configurable_chart_template"/>
+            </record>
+            <record id="conf_a_losses" model="account.account.template">
+                <field name="code">620</field>
+                <field name="name">Pérdidas</field>
+                <field name="user_type_id" ref="account.data_account_type_equity"/>
+                <field name="chart_template_id" ref="configurable_chart_template"/>
+            </record>
+        <!-- /30 Patrimonio-->
+
+        <!-- 40 Cuentas Nominales-->
+            <!-- 40.1 Cuentas nominales deudoras-->
+                <!-- 800 Gastos de operaciones-->
+                    <record id="conf_a_expense1" model="account.account.template">
+                        <field name="code">800.10</field>
+                        <field name="name">Gastos materias primas y materiales</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense2" model="account.account.template">
+                        <field name="code">800.20</field>
+                        <field name="name">Gastos de combustibles</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense3" model="account.account.template">
+                        <field name="code">800.30</field>
+                        <field name="name">Gastos de energía eléctrica</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense4" model="account.account.template">
+                        <field name="code">800.40</field>
+                        <field name="name">Gastos de salarios y remuneraciones</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense5" model="account.account.template">
+                        <field name="code">800.50</field>
+                        <field name="name">Gastos de comunicaciones</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense6" model="account.account.template">
+                        <field name="code">800.60</field>
+                        <field name="name">Gastos de depreciación de AFT</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense7" model="account.account.template">
+                        <field name="code">800.70</field>
+                        <field name="name">Gastos de alquiler de inmuebles</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_expense9" model="account.account.template">
+                        <field name="code">800.90</field>
+                        <field name="name">Otros gastos monetarios y financieros</field>
+                        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                        <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+                    </record>
+                <!-- /800 Gastos de operaciones-->
+
+                <!-- 810 Impuestos y tasas-->
+                    <record id="conf_a_tax_expense1" model="account.account.template">
+                        <field name="code">810.10</field>
+                        <field name="name">Impuestos sobre la venta</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense2" model="account.account.template">
+                        <field name="code">810.20</field>
+                        <field name="name">Impuestos sobre los servicios públicos</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense3" model="account.account.template">
+                        <field name="code">810.30</field>
+                        <field name="name">Impuestos por la utilización de la fuerza de trabajo</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense4" model="account.account.template">
+                        <field name="code">810.40</field>
+                        <field name="name">Impuestos sobre documentos</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense5" model="account.account.template">
+                        <field name="code">810.50</field>
+                        <field name="name">Tasa por la radicación de anuncios y propaganda comercial</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense6" model="account.account.template">
+                        <field name="code">810.60</field>
+                        <field name="name">Contribución a la seguridad social</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                    <record id="conf_a_tax_expense7" model="account.account.template">
+                        <field name="code">810.70</field>
+                        <field name="name">Otros impuestos y tasas</field>
+                        <field name="user_type_id" ref="data_account_type_tax_expenses"/>
+                        <field name="chart_template_id" ref="configurable_chart_template"/>
+                    </record>
+                <!-- /810 Impuestos y tasas-->
+            <!-- /40.1 Cuentas nominales deudoras-->
+
+            <!-- 40.2 Cuentas nominales acreedoras-->
+                <record id="conf_a_sale" model="account.account.template">
+                    <field name="code">900</field>
+                    <field name="name">Ventas</field>
+                    <field name="user_type_id" ref="account.data_account_type_revenue"/>
+                    <field name="chart_template_id" ref="configurable_chart_template"/>
+                </record>
+            <!-- /40.2 Cuentas nominales acreedoras-->
+
+        <!-- /40 Cuentas Nominales-->
+
+        <!-- 50 Cuenta Cierre-->
+            <!--<record id="conf_a_result" model="account.account.template">-->
+                <!--<field name="code">999</field>-->
+                <!--<field name="name">Resultado</field>-->
+                <!--<field name="user_type_id" ref="account.data_unaffected_earnings"/>-->
+                <!--<field name="chart_template_id" ref="configurable_chart_template"/>-->
+            <!--</record>-->
+        <!-- /50 Cuenta Cierre-->
+
+
+        <!-- chart template -->
+        <record id="configurable_chart_template" model="account.chart.template">
+            <field name="property_account_receivable_id" ref="conf_a_recv"/>
+            <field name="property_account_payable_id" ref="conf_a_pay"/>
+            <field name="property_account_expense_categ_id" ref="conf_a_expense1"/>
+            <field name="property_account_expense_id" ref="conf_a_expense1"/>
+            <field name="property_account_income_categ_id" ref="conf_a_sale"/>
+            <field name="property_account_income_id" ref="conf_a_sale"/>
+            <field name="complete_tax_set" eval="False"/>
+            <field name="use_anglo_saxon" eval="False"/>
+            <!--<field name="property_stock_account_input_categ_id" ref="conf_cas_interim1"/>-->
+            <!--<field name="property_stock_account_output_categ_id" ref="conf_cas_interim2"/>-->
+            <!--<field name="property_stock_valuation_account_id" ref="conf_cas"/>-->
+            <!--<field name="income_currency_exchange_account_id" ref="exchange_fx_income"/>-->
+            <!--<field name="expense_currency_exchange_account_id" ref="exchange_fx_expense"/>-->
+        </record>
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_company_form_inherit" model="ir.ui.view">
+            <field name="name">res.company.form.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']/ancestor::*[1]" position="replace">
+                    <div>
+                        <field name="street" placeholder="Street..."/>
+                        <field name="street2"/>
+                        <field name="country_id" placeholder="Country" class="oe_no_button"
+                               options='{"no_open": True}'/>
+                        <field name="state_id" class="oe_no_button" placeholder="Province"
+                               options='{"no_open": True}'/>
+                        <field name="city" placeholder="City" style="display: none" invisible="1"/>
+                        <div class="address_format">
+                            <field name="county_id" style="width: 70%%" placeholder="County" options='{"no_open": True}'
+                                   domain="[('state_id','=',state_id)]"/>
+                            <field name="zip" placeholder="ZIP" style="width: 30%%"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

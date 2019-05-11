@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_waiter_tree">
+            <field name="name">pos.waiter.tree</field>
+            <field name="model">pos.waiter</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Waiter">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_pos_waiter">
+            <field name="name">Waiters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.waiter</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <menuitem parent="point_of_sale.menu_point_config_product" id="menu_pos_waiter"
+                  action="action_pos_waiter" sequence="10" groups="point_of_sale.group_pos_manager"/>
+    </data>
+</openerp>

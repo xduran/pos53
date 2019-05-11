@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <!-- <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".paymentmethods-container" t-operation="after">
+            <div class="pos-order-note-div">
+			    <br />
+                <textarea rows="15" class="pos-order-note" placeholder="You can write a note to the order.">
+                    <t t-if="widget.pos.get_order()" t-esc="widget.pos.get_order().note" />
+                </textarea>
+            </div>
+        </t>
+    </t>-->
+</templates>

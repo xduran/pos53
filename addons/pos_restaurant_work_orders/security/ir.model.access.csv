@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_work_order_stage_user,pos.work.order.stage user,model_pos_work_order_stage,point_of_sale.group_pos_user,1,0,0,0
+access_pos_work_order_user,pos.work.order user,model_pos_work_order,point_of_sale.group_pos_user,1,1,1,0
+access_pos_work_order_garnish_user,pos.work.order.garnish user,model_pos_work_order_garnish,point_of_sale.group_pos_user,1,1,1,1

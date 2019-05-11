@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="pos_work_order_form_view">
+            <field name="name">pos.work.order.form</field>
+            <field name="model">pos.work.order</field>
+            <field name="arch" type="xml">
+                <form  create="false" string="Work Order">
+                    <header>
+                        <field name="stage_id" widget="statusbar" clickable="True" options="{'fold_field': 'fold'}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="quantity" class="oe_inline"/>
+                                <field name="product_id" placeholder="Select product." class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="table_id"/>
+                            <field name="garnish_ids">
+                                <tree>
+                                    <field name="garnish_id"/>
+                                </tree>
+                            </field>
+                            <field name="waiter_id"/>
+                            <field name="note"/>
+                            <field name="create_date"/>
+                            <field name="config_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_work_order_search_view">
+            <field name="name">pos.work.order.search</field>
+            <field name="model">pos.work.order</field>
+            <field name="arch" type="xml">
+               <search string="Work Order">
+                   <field name="stage_id"/>
+                   <field name="pos_categ_id"/>
+                   <field name="session_id"/>
+                   <separator/>
+                   <group expand="0" string="Group By">
+                       <filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>
+                   </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_work_order_tree_view">
+            <field name="name">pos.work.order.tree</field>
+            <field name="model">pos.work.order</field>
+            <field name="arch" type="xml">
+                <tree  create="false" string="Work Orders">
+                    <field name="create_date"/>
+                    <field name="table_id"/>
+                    <field name="quantity"/>
+                    <field name="product_id"/>
+                    <field name="garnish_text"/>
+                    <field name="stage_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_work_order_kanban_view">
+            <field name="name">pos.work.order.kanban</field>
+            <field name="model">pos.work.order</field>
+            <field name="arch" type="xml">
+                <kanban  create="false" default_group_by="stage_id" class="o_kanban_small_column">
+                    <field name="stage_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_kanban_content">
+                                    <div class="o_kanban_detail">
+                                        <div class="work_order_header">
+                                            <strong><field name="name"/></strong>
+                                            <field name="garnish_text"/>
+                                        </div>
+                                        <div class="work_order_body">
+                                            <span t-if="record.note.raw_value">
+                                                <field name="note"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_footer">
+                                        <a type="object" name="action_workflow_move_backward" class="oe_kanban_action o_kanban_reload">
+                                            <span class="fa fa-arrow-left"/>
+                                        </a>
+                                        <span t-if="record.waiter_id.raw_value" class="badge">
+                                            <field name="waiter_id"/>
+                                        </span>
+                                        <span class="badge">
+                                            <field name="order"/>
+                                        </span>
+                                        <a type="object" name="action_workflow_move_forward" class="oe_kanban_action o_kanban_reload">
+                                            <span class="fa fa-arrow-right"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="pos_work_order_action" model="ir.actions.act_window">
+            <field name="name">Work Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.work.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="auto_refresh">10</field>
+            <field name="view_id" eval="pos_work_order_kanban_view"/>
+            <field name="search_view_id" ref="pos_work_order_search_view"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new work order.
+              </p>
+            </field>
+        </record>
+        <record id="pos_work_order_action1" model="ir.actions.act_window">
+            <field name="name">Work Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.work.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="auto_refresh">5</field>
+            <field name="view_id" eval="pos_work_order_kanban_view"/>
+            <field name="domain">[('session_id.state','=','opened'),
+                                  ('pos_categ_id','in', context.get('categories'))]</field>
+            <field name="search_view_id" ref="pos_work_order_search_view"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new work order.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="pos_work_order_action" id="menu_pos_work_order"
+                  parent="point_of_sale.menu_point_of_sale" sequence="20" />
+
+        <record model="ir.ui.view" id="restaurant_printer_form_view">
+            <field name="name">Order Printer Inherit</field>
+            <field name="model">restaurant.printer</field>
+            <field name="inherit_id" ref="pos_restaurant.view_restaurant_printer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="replace">
+                    <form string="POS Printer">
+                        <sheet>
+                            <div class="oe_button_box" name="button_box">
+
+                            </div>
+                            <div class="oe_title">
+                                <label for="name" class="oe_edit_only"/>
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+                            </div>
+                            <group col="2">
+                                <field name="proxy_ip" />
+                                <field name="product_categories_ids" />
+                            </group>
+                        </sheet>
+                    </form>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_session_form_view">
+            <field name="name">pos.session.form.inherit.view</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button type="action" class="oe_stat_button" id="work_order_button" icon="fa-pencil-square-o"
+                        name="%(pos_restaurant_work_orders.pos_work_order_action)d"
+                        context="{'search_default_session_id': active_id,'default_session_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value"><field name="work_order_count"/></span>
+                            <span class="o_stat_text">Work Orders</span>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+        <record id="pos_work_center_kanban_view" model="ir.ui.view">
+            <field name="name">pos.work.center.kanban.view</field>
+            <field name="model">pos.category</field>
+            <field name="arch" type="xml">
+                <kanban create="false" class="o_kanban_dashboard o_pos_kanban">
+                    <field name="name"/>
+                    <templates>
+                        <t t-value="record.id" t-set="active_id"/>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary"><t t-esc="record.name.value"/></div>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content o_visible">
+                                    <div class="row">
+                                        <div class="col-xs-6 o_kanban_primary_left">
+                                            <button type="object" name="action_work_orders" class="btn btn-primary btn-sm">
+                                                Work Orders
+                                            </button>
+                                        </div>
+                                        <div class="col-xs-6 o_kanban_primary_right">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="pos_work_center_action" model="ir.actions.act_window">
+            <field name="name">Work Center</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.category</field>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" eval="pos_work_center_kanban_view"/>
+            <field name="domain">[('parent_id','=',None)]</field>
+        </record>
+
+        <menuitem action="pos_work_center_action" id="menu_pos_work_center"
+                  web_icon="pos_restaurant_work_orders,static/description/icon.png" sequence="21" />
+
+    </data>
+</openerp>

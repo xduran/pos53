@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unit of Measure data for Restaurant. -->
+<odoo noupdate="1">
+	<record id="product.product_uom_unit" model="product.uom">
+		<field eval="1" name="rounding"/>
+	</record>
+	<record id="restaurant_uom_0" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">lata 380g</field>
+		<field name="factor">2.631578</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_1" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_unit"/>
+		<field name="name">mu</field>
+		<field name="factor_inv" type="float">1000.0</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_2" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_unit"/>
+		<field name="name">bolsa</field>
+		<field name="factor_inv" type="float">100</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_3" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">caja 200mL</field>
+		<field name="factor">5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_4" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">botella 650mL</field>
+		<field name="factor">1.538461</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_5" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">botella 142mL</field>
+		<field name="factor">7.042253</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_6" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">bolsita 200g</field>
+		<field name="factor">5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_7" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">bolsa 180g</field>
+		<field name="factor">5.555555</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_8" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">botella 200mL</field>
+		<field name="factor">5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_9" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 50g</field>
+		<field name="factor">20</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_10" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">bolsita 1g</field>
+		<field name="factor">1000</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_11" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u2500g</field>
+		<field name="factor_inv" type="float">0.4</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_12" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 500g</field>
+		<field name="factor">2</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_13" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 375g</field>
+		<field name="factor">2.666666</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_14" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 350g</field>
+		<field name="factor">2.857142</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_15" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 300g</field>
+		<field name="factor">3.333333</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_16" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 250g</field>
+		<field name="factor">4</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_17" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_unit"/>
+		<field name="name">pqt 80U</field>
+		<field name="factor_inv" type="float">80</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_18" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 650g</field>
+		<field name="factor">1.538461</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_19" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 100g</field>
+		<field name="factor">10</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_20" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 1900g</field>
+		<field name="factor_inv" type="float">0.526315</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_21" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 200g</field>
+		<field name="factor">5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_22" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mno 2000g</field>
+		<field name="factor_inv" type="float">0.5</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_23" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 75g</field>
+		<field name="factor">13.333333</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_24" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 10g</field>
+		<field name="factor">100</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_25" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 1800g</field>
+		<field name="factor_inv" type="float">0.555555</field>
+		<field name="uom_type">bigger</field>
+	</record>
+	<record id="restaurant_uom_26" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">pqt 400g</field>
+		<field name="factor">2.5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_27" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 16g</field>
+		<field name="factor">62.5</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_28" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">botella 60mL</field>
+		<field name="factor">16.666666</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_29" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">mzo 20g</field>
+		<field name="factor">50</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_30" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_kgm"/>
+		<field name="name">u 100g</field>
+		<field name="factor">10</field>
+		<field name="uom_type">smaller</field>
+	</record>
+	<record id="restaurant_uom_31" model="product.uom">
+		<field name="category_id" ref="product.product_uom_categ_vol"/>
+		<field name="name">botella 25mL</field>
+		<field name="factor">40</field>
+		<field name="uom_type">smaller</field>
+	</record>
+</odoo>

@@ -1,0 +1,11 @@
+.pos .order .orderline .price{
+    text-align:right;
+}
+
+.pos .order .orderline .price .ready{
+    color: #6EC89B;
+}
+
+.pos .order .orderline .price .not-ready{
+    color: darkgrey;
+}

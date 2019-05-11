@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_report_cash_pivot" model="ir.ui.view">
+            <field name="name">report.cash.pivot</field>
+            <field name="model">report.cash</field>
+            <field name="arch" type="xml">
+                <pivot string="Cash Analysis">
+                    <field name="reason_category_id" type="row"/>
+                    <field name="reason_id" type="row"/>
+                    <field name="date" interval="month" type="col"/>
+                    <field name="amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="action_report_cash_all" model="ir.actions.act_window">
+            <field name="name">Cash Analysis</field>
+            <field name="res_model">report.cash</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot</field>
+            <field name="context">{'group_by_no_leaf':1,'group_by':[]}</field>
+        </record>
+
+        <menuitem name="Cash Flow" action="action_report_cash_all" id="menu_report_cash_all"
+                  parent="point_of_sale.menu_point_rep" sequence="4"/>
+    </data>
+</openerp>

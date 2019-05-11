@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cash_box_reason_user,cash.box.reason user,model_cash_box_reason,point_of_sale.group_pos_user,1,0,0,0
+access_cash_box_reason_manager,cash.box.reason manager,model_cash_box_reason,point_of_sale.group_pos_manager,1,1,1,1
+access_currency_values_user,currency.values user,model_currency_values,point_of_sale.group_pos_user,1,0,0,0
+access_currency_values_manager,currency.values manager,model_currency_values,point_of_sale.group_pos_manager,1,1,1,1
+access_cash_box_reason_category_manager,cash.box.reason.category manager,model_cash_box_reason_category,point_of_sale.group_pos_manager,1,1,1,1
+access_report_cash_manager,report.cash manager,model_report_cash,point_of_sale.group_pos_manager,1,1,1,1

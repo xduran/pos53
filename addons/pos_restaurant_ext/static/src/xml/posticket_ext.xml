@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="PosTicket">
+        <t t-jquery=".pos-sale-ticket" t-operation="replace">
+            <div class="pos-sale-ticket">
+                <div class="pos-center-align">
+                    <t t-if='receipt.company.name'>
+                        <div size="double"><t t-esc='receipt.company.name' /></div>
+                    </t>
+                    <t t-if='receipt.company.phone'>
+                        <div>Tel:<t t-esc='receipt.company.phone' /></div>
+                    </t>
+                    <t t-if='receipt.company.email'>
+                        <div><t t-esc='receipt.company.email' /></div>
+                    </t>
+                    <t t-if='receipt.company.website'>
+                        <div><t t-esc='receipt.company.website' /></div>
+                    </t>
+                    <div>
+                        <!--<div><t t-esc='receipt.date.localestring' /></div>-->
+                        <div><span t-esc="receipt.date.date"/>/<span t-esc="receipt.date.month + 1"/>/<span t-esc="receipt.date.year"/></div>
+                    </div>
+                    <t t-if='receipt.table'>
+                        <div><t t-esc="receipt.floor"/>/<t t-esc="receipt.table"/></div>
+                    </t>
+                    <t t-if='receipt.waiter'>
+                        <div>Served by <t t-esc='receipt.waiter' /></div>
+                    </t>
+                    <t t-if='receipt.cashier'>
+                        <div>Cashier: <t t-esc='receipt.cashier' /></div>
+                    </t>
+                    <t t-if='receipt.client'>
+                        <div>Client: <t t-esc='receipt.client' /></div>
+                    </t>
+                    <t t-if='receipt.header'>
+                        <div><t t-esc='receipt.header' /></div>
+                    </t>
+                </div>
+                <br />
+
+                <div line-ratio='0.6'>
+                    <t t-foreach='receipt.orderlines' t-as='line'>
+                        <t>
+                            <div align="center">
+                                <t t-esc='line.string_to_print' />
+                            </div>
+                        </t>
+                        <t t-if="line.garnish">
+                            <div align="left">
+                               >>> <t t-esc='line.garnish' />
+                            </div>
+                        </t>
+                    </t>
+                </div>
+                <br />
+                <div align="center">
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div><t t-esc='receipt.subtotal_text'/></div>
+                    <div><t t-esc='receipt.discount_text'/></div>
+                    <div><t t-esc='receipt.service_text'/></div>
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <div size="double-height" class="emph"><t t-esc='receipt.total_text'/></div>
+                    <br/>
+                </div>
+                <br />
+                <div align="center">
+                    <div>~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <t t-foreach='receipt.paymentlines' t-as='line'>
+                        <div><t t-esc='line.string_to_print'/></div>
+                    </t>
+
+                    <div t-if="order.get_change()"><t t-esc='receipt.change_text'/></div>
+                    <div t-if="order.get_tip()"><t t-esc='receipt.tip_text'/></div>
+                </div>
+                <t t-if='receipt.footer_xml'>
+                    <br/>
+                    <t t-raw='receipt.footer_xml' />
+                </t>
+                <t t-if='!receipt.footer_xml and receipt.footer'>
+                    <br/>
+                    <t t-esc='receipt.footer' />
+                </t>
+            </div>
+
+        </t>
+    </t>
+</templates>
