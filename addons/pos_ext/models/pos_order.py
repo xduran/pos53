@@ -168,7 +168,10 @@ class POSOrder(models.Model):
                     for pack in pick.pack_operation_ids:
                         self.pool['stock.pack.operation'].write(cr, uid, [pack.id], {'qty_done': pack.product_qty},
                                                                 context=context)
-                    picking_obj.action_done(cr, uid, [sources_map[key]], context=context)
+                    if pick.state == 'draft' and not len(pick.pack_operation_ids):
+                        pick.unlink()
+                    else:
+                        picking_obj.action_done(cr, uid, [sources_map[key]], context=context)
 
         return True
 

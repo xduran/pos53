@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit3</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='features']" position="after">
+                    <group name="salary" string="Staff Salary" >
+
+                        <field name="iface_staff_salary" />
+                        <field name="salary_pc" attrs="{'invisible': [('iface_staff_salary', '=', False)],}"/>
+                        <field name="exclude_discounts" attrs="{'invisible': [('iface_staff_salary', '=', False)],}"/>
+                        <field name="exclude_products"
+                               attrs="{'invisible': [('iface_staff_salary', '=', False)]}"
+                        />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_session_inherit_form">
+            <field name="name">pos.session.form.view.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="iface_staff_salary" invisible="1"/>
+                    <field name="staff_salary" widget="monetary"
+                           attrs="{'invisible': ['|',('state', '=', 'opening_control'),('staff_salary', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

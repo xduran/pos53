@@ -61,6 +61,7 @@ class PosOrder(models.Model):
             if pos_order['reason']:
                 order.cancellation_reason = pos_order['reason'].encode('utf-8').strip(" \t\n")
             order.is_cancelled = True
+            order.state = 'paid'
         return order.id
 
     @api.multi

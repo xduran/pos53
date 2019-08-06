@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_deleted_lines_tree">
+            <field name="name">Changed Lines</field>
+            <field name="model">pos.changed.line</field>
+            <field name="arch" type="xml">
+                <tree string="Changed Lines" create="false" delete="false"
+                      decoration-info="printed_discount &lt;&gt; final_discount"
+                      decoration-warning="printed_price_unit &lt;&gt; final_price_unit"
+                      decoration-danger="final_quantity &lt;&gt; printed_quantity"
+                      decoration-bf="final_quantity &lt; printed_quantity or printed_price_unit &gt; final_price_unit or printed_discount &lt; final_discount">
+                    <field name="config_id"/>
+                    <field name="order_id"/>
+                    <field name="create_date"/>
+                    <field name="user_id"/>
+                    <field name="table_id"/>
+                    <field name="product_id"/>
+                    <field name="printed_quantity"/>
+                    <field name="final_quantity"/>
+                    <field name="printed_price_unit"/>
+                    <field name="final_price_unit"/>
+                    <field name="printed_discount" groups="base.group_no_one"/>
+                    <field name="final_discount" groups="base.group_no_one"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_pos_deleted_lines">
+            <field name="name">Changed Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.changed.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" eval="False"/>
+        </record>
+        <menuitem parent="point_of_sale.menu_point_of_sale" id="menu_deleted_lines" action="action_pos_deleted_lines" sequence="1" groups="point_of_sale.group_pos_manager"/>
+
+        <record model="ir.ui.view" id="view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit3</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="pos_restaurant.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='iface_splitbill']" position="after">
+                    <field name="iface_changes_control" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_order_tree_inherit">
+            <field name="name">Orders Inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="printed_times" invisible="1"/>
+                    <field name="changed_lines" invisible="1"/>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="decoration-warning">printed_times > 1</attribute>
+                    <attribute name="decoration-danger">changed_lines</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_pos_order_form_inherit">
+            <field name="name">Orders Form Inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pos_reference']" position="after">
+                    <field name="printed_times" />
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="Changes" string="Changed lines" groups="point_of_sale.group_pos_manager">
+                        <field name="changed_lines" colspan="4" nolabel="1">
+                            <tree create="false" delete="false" edit="false" string="Changed lines"
+                                  decoration-info="printed_discount &lt;&gt; final_discount"
+                                  decoration-warning="printed_price_unit &lt;&gt; final_price_unit"
+                                  decoration-danger="final_quantity &lt;&gt; printed_quantity"
+                                  decoration-bf="final_quantity &lt; printed_quantity or printed_price_unit &gt; final_price_unit or printed_discount &lt; final_discount">
+                                <field name="product_id"/>
+                                <field name="printed_quantity"/>
+                                <field name="final_quantity"/>
+                                <field name="printed_price_unit"/>
+                                <field name="final_price_unit"/>
+                                <field name="printed_discount" groups="base.group_no_one"/>
+                                <field name="final_discount" groups="base.group_no_one"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</openerp>
